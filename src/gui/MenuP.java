@@ -18,9 +18,6 @@ public class MenuP extends javax.swing.JPanel {
      */
     public MenuP() {
         initComponents();
-        System.out.println("foo");
-        JButton button = new javax.swing.JButton();
-        this.setVisible(true);
     }
 
     /**

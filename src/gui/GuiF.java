@@ -23,23 +23,12 @@ public class GuiF extends javax.swing.JFrame {
      */
     public GuiF() {
         
-         this.setVisible(true);
+        this.setVisible(true);
         initComponents();
-        
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.FlowLayout());
         
         menu = new MenuP();
         this.add(menu);
 
-        JButton button = new JButton();
-        button.setText("bar");
-        button.setVisible(true);
-        this.add(button);
-        
-        this.revalidate();
-        this.repaint();
-        
         pack();
     }
     
