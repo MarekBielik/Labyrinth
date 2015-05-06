@@ -9,13 +9,15 @@ package gui;
  *
  * @author marek
  */
-public class MenuGui extends javax.swing.JFrame {
+public class MenuP extends javax.swing.JPanel {
 
     /**
-     * Creates new form MenuGui
+     * Creates new form MenuP
      */
-    public MenuGui() {
+    public MenuP() {
         initComponents();
+        System.out.println("foo");
+        this.setVisible(true);
     }
 
     /**
@@ -27,61 +29,21 @@ public class MenuGui extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        numberOfPlayersBG = new javax.swing.ButtonGroup();
-        boardSizeBG = new javax.swing.ButtonGroup();
-        cardPackSizeBG = new javax.swing.ButtonGroup();
-        LabyrinthL = new javax.swing.JLabel();
-        players2RB = new javax.swing.JRadioButton();
-        players3RB = new javax.swing.JRadioButton();
-        players4RB = new javax.swing.JRadioButton();
-        boardSize9RB = new javax.swing.JRadioButton();
         boardSize7RB = new javax.swing.JRadioButton();
-        boardSize5RB = new javax.swing.JRadioButton();
-        cardPackSize24RB = new javax.swing.JRadioButton();
-        cardPackSize12RB = new javax.swing.JRadioButton();
+        boardSize9RB = new javax.swing.JRadioButton();
+        players4RB = new javax.swing.JRadioButton();
+        players3RB = new javax.swing.JRadioButton();
         boardSize11RB = new javax.swing.JRadioButton();
-        newGameRB = new javax.swing.JButton();
-        playersL = new javax.swing.JLabel();
+        cardPackSize12RB = new javax.swing.JRadioButton();
+        cardPackSize24RB = new javax.swing.JRadioButton();
+        boardSize5RB = new javax.swing.JRadioButton();
         boardSizeL = new javax.swing.JLabel();
         cardPackSizeL = new javax.swing.JLabel();
+        newGameRB = new javax.swing.JButton();
+        playersL = new javax.swing.JLabel();
+        LabyrinthL = new javax.swing.JLabel();
+        players2RB = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        LabyrinthL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/Title.gif"))); // NOI18N
-
-        numberOfPlayersBG.add(players2RB);
-        players2RB.setText("2");
-        players2RB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                players2RBActionPerformed(evt);
-            }
-        });
-
-        numberOfPlayersBG.add(players3RB);
-        players3RB.setText("3");
-        players3RB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                players3RBActionPerformed(evt);
-            }
-        });
-
-        numberOfPlayersBG.add(players4RB);
-        players4RB.setText("4");
-        players4RB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                players4RBActionPerformed(evt);
-            }
-        });
-
-        boardSizeBG.add(boardSize9RB);
-        boardSize9RB.setText("9");
-        boardSize9RB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boardSize9RBActionPerformed(evt);
-            }
-        });
-
-        boardSizeBG.add(boardSize7RB);
         boardSize7RB.setText("7");
         boardSize7RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,23 +51,34 @@ public class MenuGui extends javax.swing.JFrame {
             }
         });
 
-        boardSizeBG.add(boardSize5RB);
-        boardSize5RB.setText("5");
-        boardSize5RB.addActionListener(new java.awt.event.ActionListener() {
+        boardSize9RB.setText("9");
+        boardSize9RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boardSize5RBActionPerformed(evt);
+                boardSize9RBActionPerformed(evt);
             }
         });
 
-        cardPackSizeBG.add(cardPackSize24RB);
-        cardPackSize24RB.setText("24");
-        cardPackSize24RB.addActionListener(new java.awt.event.ActionListener() {
+        players4RB.setText("4");
+        players4RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cardPackSize24RBActionPerformed(evt);
+                players4RBActionPerformed(evt);
             }
         });
 
-        cardPackSizeBG.add(cardPackSize12RB);
+        players3RB.setText("3");
+        players3RB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                players3RBActionPerformed(evt);
+            }
+        });
+
+        boardSize11RB.setText("11");
+        boardSize11RB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boardSize11RBActionPerformed(evt);
+            }
+        });
+
         cardPackSize12RB.setText("12");
         cardPackSize12RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,13 +86,23 @@ public class MenuGui extends javax.swing.JFrame {
             }
         });
 
-        boardSizeBG.add(boardSize11RB);
-        boardSize11RB.setText("11");
-        boardSize11RB.addActionListener(new java.awt.event.ActionListener() {
+        cardPackSize24RB.setText("24");
+        cardPackSize24RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                boardSize11RBActionPerformed(evt);
+                cardPackSize24RBActionPerformed(evt);
             }
         });
+
+        boardSize5RB.setText("5");
+        boardSize5RB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boardSize5RBActionPerformed(evt);
+            }
+        });
+
+        boardSizeL.setText("Board size");
+
+        cardPackSizeL.setText("Card pack size");
 
         newGameRB.setText("NewGame");
         newGameRB.addActionListener(new java.awt.event.ActionListener() {
@@ -130,16 +113,21 @@ public class MenuGui extends javax.swing.JFrame {
 
         playersL.setText("Players");
 
-        boardSizeL.setText("Board size");
+        LabyrinthL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/Title.gif"))); // NOI18N
 
-        cardPackSizeL.setText("Card pack size");
+        players2RB.setText("2");
+        players2RB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                players2RBActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 124, Short.MAX_VALUE)
+                .addGap(0, 278, Short.MAX_VALUE)
                 .addComponent(LabyrinthL)
                 .addGap(153, 153, 153))
             .addGroup(layout.createSequentialGroup()
@@ -211,50 +199,47 @@ public class MenuGui extends javax.swing.JFrame {
                 .addComponent(newGameRB)
                 .addGap(115, 115, 115))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void players2RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players2RBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_players2RBActionPerformed
-
-    private void players3RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players3RBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_players3RBActionPerformed
-
-    private void players4RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players4RBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_players4RBActionPerformed
-
-    private void boardSize9RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize9RBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_boardSize9RBActionPerformed
 
     private void boardSize7RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize7RBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_boardSize7RBActionPerformed
 
-    private void boardSize5RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize5RBActionPerformed
+    private void boardSize9RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize9RBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_boardSize5RBActionPerformed
+    }//GEN-LAST:event_boardSize9RBActionPerformed
 
-    private void cardPackSize24RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardPackSize24RBActionPerformed
+    private void players4RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players4RBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cardPackSize24RBActionPerformed
+    }//GEN-LAST:event_players4RBActionPerformed
 
-    private void cardPackSize12RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardPackSize12RBActionPerformed
+    private void players3RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players3RBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cardPackSize12RBActionPerformed
+    }//GEN-LAST:event_players3RBActionPerformed
 
     private void boardSize11RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize11RBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_boardSize11RBActionPerformed
 
-    private void newGameRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameRBActionPerformed
+    private void cardPackSize12RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardPackSize12RBActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_cardPackSize12RBActionPerformed
+
+    private void cardPackSize24RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardPackSize24RBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cardPackSize24RBActionPerformed
+
+    private void boardSize5RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize5RBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boardSize5RBActionPerformed
+
+    private void newGameRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameRBActionPerformed
+        super.setVisible(false);
     }//GEN-LAST:event_newGameRBActionPerformed
 
+    private void players2RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players2RBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_players2RBActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -263,14 +248,11 @@ public class MenuGui extends javax.swing.JFrame {
     private javax.swing.JRadioButton boardSize5RB;
     private javax.swing.JRadioButton boardSize7RB;
     private javax.swing.JRadioButton boardSize9RB;
-    private javax.swing.ButtonGroup boardSizeBG;
     private javax.swing.JLabel boardSizeL;
     private javax.swing.JRadioButton cardPackSize12RB;
     private javax.swing.JRadioButton cardPackSize24RB;
-    private javax.swing.ButtonGroup cardPackSizeBG;
     private javax.swing.JLabel cardPackSizeL;
     private javax.swing.JButton newGameRB;
-    private javax.swing.ButtonGroup numberOfPlayersBG;
     private javax.swing.JRadioButton players2RB;
     private javax.swing.JRadioButton players3RB;
     private javax.swing.JRadioButton players4RB;
