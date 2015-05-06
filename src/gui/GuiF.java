@@ -5,11 +5,15 @@
  */
 package gui;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
 /**
  *
  * @author marek
  */
-public class Gui extends javax.swing.JFrame {
+public class GuiF extends javax.swing.JFrame {
 
     MenuP menu;
     GameP board;
@@ -17,13 +21,26 @@ public class Gui extends javax.swing.JFrame {
     /**
      * Creates new form MenuGui
      */
-    public Gui() {
+    public GuiF() {
+        
+         this.setVisible(true);
         initComponents();
         
-        menu = new MenuP(); 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.FlowLayout());
         
+        menu = new MenuP();
         this.add(menu);
-        this.setVisible(true);
+
+        JButton button = new JButton();
+        button.setText("bar");
+        button.setVisible(true);
+        this.add(button);
+        
+        this.revalidate();
+        this.repaint();
+        
+        pack();
     }
     
     
@@ -37,20 +54,19 @@ public class Gui extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 444, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 273, Short.MAX_VALUE)
-        );
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+        getContentPane().setLayout(new java.awt.FlowLayout());
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+
+    }//GEN-LAST:event_formWindowOpened
 
 
 
