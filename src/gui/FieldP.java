@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
  *
  * @author marek
  */
-public class fieldP extends javax.swing.JPanel {
+public class FieldP extends javax.swing.JPanel {
     
     int r;
     int c;
@@ -22,7 +22,7 @@ public class fieldP extends javax.swing.JPanel {
     /**
      * Creates new form fieldP
      */
-    public fieldP( int c, int r) {
+    public FieldP( int c, int r) {
         initComponents();
         
         this.r = r;

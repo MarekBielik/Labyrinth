@@ -22,7 +22,7 @@ import javax.swing.JLayeredPane;
  */
 public class GameP extends javax.swing.JPanel {
 
-    public ArrayList<fieldP> pack = new ArrayList<fieldP>();
+    public ArrayList<FieldP> pack = new ArrayList<FieldP>();
     
     /**
      * Creates new form GameP
@@ -301,9 +301,9 @@ public class GameP extends javax.swing.JPanel {
 
 
     public void printBoard() {
-        for(int c = 1; c < Labyrinth.mazeBoard.board.length; c++) {
-            for (int r = 1; r < Labyrinth.mazeBoard.board.length; r++) {
-                board.add(new fieldP(c, r));
+        for(int r = 1; r < Labyrinth.mazeBoard.board.length; r++) {
+            for (int c = 1; c < Labyrinth.mazeBoard.board.length; c++) {
+                board.add(new FieldP(c, r));
             }
         }
     }
