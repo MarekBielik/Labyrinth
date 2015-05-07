@@ -207,34 +207,49 @@ public class MenuP extends javax.swing.JPanel {
 
     private void boardSize7RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize7RBActionPerformed
         // TODO add your handling code here:
+        Labyrinth.boardSize = 7;
+        System.out.println("Board size set on 7");
     }//GEN-LAST:event_boardSize7RBActionPerformed
 
     private void boardSize9RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize9RBActionPerformed
         // TODO add your handling code here:
+        Labyrinth.boardSize = 9;
+        System.out.println("Board size set on 9");
     }//GEN-LAST:event_boardSize9RBActionPerformed
 
     private void players4RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players4RBActionPerformed
         // TODO add your handling code here:
+        Labyrinth.numbeOfPlayers = 4;
+        System.out.println("Number of players set on 4");
     }//GEN-LAST:event_players4RBActionPerformed
 
     private void players3RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players3RBActionPerformed
         // TODO add your handling code here:
+        Labyrinth.numbeOfPlayers = 3;
+        System.out.println("Number of players set on 3");
     }//GEN-LAST:event_players3RBActionPerformed
 
     private void boardSize11RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize11RBActionPerformed
         // TODO add your handling code here:
+        Labyrinth.boardSize = 11;
+        System.out.println("Board size set on 11");
     }//GEN-LAST:event_boardSize11RBActionPerformed
 
     private void cardPackSize12RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardPackSize12RBActionPerformed
         // TODO add your handling code here:
+        Labyrinth.cardPackSize = 12;
+        System.out.println("Card pack size set on 12");
     }//GEN-LAST:event_cardPackSize12RBActionPerformed
 
     private void cardPackSize24RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardPackSize24RBActionPerformed
         // TODO add your handling code here:
+        Labyrinth.cardPackSize = 24;
+        System.out.println("Card pack size set on 24");
     }//GEN-LAST:event_cardPackSize24RBActionPerformed
 
     private void boardSize5RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize5RBActionPerformed
         Labyrinth.boardSize = 5;
+        System.out.println("Board size set on 5");
     }//GEN-LAST:event_boardSize5RBActionPerformed
 
     private void newGameRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameRBActionPerformed
@@ -247,6 +262,7 @@ public class MenuP extends javax.swing.JPanel {
 
     private void players2RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players2RBActionPerformed
         Labyrinth.numbeOfPlayers = 2;
+        System.out.println("Number of players set on 2");
     }//GEN-LAST:event_players2RBActionPerformed
 
 
