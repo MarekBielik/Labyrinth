@@ -27,16 +27,16 @@ public class GameP extends javax.swing.JPanel {
         
         switch (Labyrinth.boardSize) {
             case 5: board.setPreferredSize(new java.awt.Dimension(400, 400));
-                  Labyrinth.gui.setSize(900, 950);
+                  Labyrinth.gui.setSize(900, 750);
                 break;
             case 7: board.setPreferredSize(new java.awt.Dimension(550, 550));
-           Labyrinth.gui.setSize(new java.awt.Dimension(800, 950));
+           Labyrinth.gui.setSize(new java.awt.Dimension(800, 850));
                 break;
             case 9: board.setPreferredSize(new java.awt.Dimension(700, 700));
-            Labyrinth.gui.setSize(900, 1050);
+            Labyrinth.gui.setSize(900, 950);
                 break;
             case 11: board.setPreferredSize(new java.awt.Dimension(850, 850));
-            Labyrinth.gui.setSize(1100, 1150);
+            Labyrinth.gui.setSize(1100, 1050);
                 break;
         }
         
@@ -98,7 +98,7 @@ public class GameP extends javax.swing.JPanel {
         KartaL = new javax.swing.JLabel();
         AktualniKartaL = new javax.swing.JLabel();
 
-        setMinimumSize(new java.awt.Dimension(500, 240));
+        setMinimumSize(new java.awt.Dimension(500, 200));
         setLayout(new java.awt.BorderLayout());
 
         board.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
