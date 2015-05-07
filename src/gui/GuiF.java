@@ -15,8 +15,8 @@ import java.awt.event.*;
  */
 public class GuiF extends javax.swing.JFrame {
 
-    MenuP menu;
-    GameP board;
+    public  MenuP menu;
+    public GameP board;
     
     /**
      * Creates new form MenuGui
@@ -25,11 +25,24 @@ public class GuiF extends javax.swing.JFrame {
         
         this.setVisible(true);
         initComponents();
-        
+
+        displayMenu();
+           
+        pack();
+    }
+    
+    public void displayBoard() {
+        board = new GameP();
+        this.add(board);
+    }
+    
+    public void hideMenu() {
+        menu.setVisible(false);
+    }
+    
+    public void displayMenu() {
         menu = new MenuP();
         this.add(menu);
-
-        pack();
     }
     
     

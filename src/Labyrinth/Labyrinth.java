@@ -11,6 +11,14 @@ import java.io.IOException;
 public class Labyrinth {
 
     /**
+     *
+     */
+    public static GuiF gui;
+    public static int boardSize = 7;
+    public static int numbeOfPlayers;
+    public static int cardPackSize;
+    
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -37,13 +45,11 @@ public class Labyrinth {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GuiF();
+                gui = new GuiF();
             }
         });
     }

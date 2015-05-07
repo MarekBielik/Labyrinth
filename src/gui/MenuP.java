@@ -6,6 +6,7 @@
 package gui;
 
 import javax.swing.*;
+import Labyrinth.*;
 
 /**
  *
@@ -41,7 +42,6 @@ public class MenuP extends javax.swing.JPanel {
         cardPackSizeL = new javax.swing.JLabel();
         newGameRB = new javax.swing.JButton();
         playersL = new javax.swing.JLabel();
-        LabyrinthL = new javax.swing.JLabel();
         players2RB = new javax.swing.JRadioButton();
 
         boardSize7RB.setText("7");
@@ -113,8 +113,6 @@ public class MenuP extends javax.swing.JPanel {
 
         playersL.setText("Players");
 
-        LabyrinthL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/Title.gif"))); // NOI18N
-
         players2RB.setText("2");
         players2RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,10 +124,6 @@ public class MenuP extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 278, Short.MAX_VALUE)
-                .addComponent(LabyrinthL)
-                .addGap(153, 153, 153))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -167,14 +161,12 @@ public class MenuP extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(250, 250, 250)
                         .addComponent(cardPackSizeL, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LabyrinthL)
-                .addGap(18, 18, 18)
+                .addContainerGap(119, Short.MAX_VALUE)
                 .addComponent(playersL, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -230,20 +222,23 @@ public class MenuP extends javax.swing.JPanel {
     }//GEN-LAST:event_cardPackSize24RBActionPerformed
 
     private void boardSize5RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize5RBActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_boardSize5RBActionPerformed
 
     private void newGameRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameRBActionPerformed
-        super.setVisible(false);
+        //super.setVisible(false);
+        Labyrinth.gui.hideMenu();
+        Labyrinth.gui.displayBoard();
+        
+        //super.add(this);
     }//GEN-LAST:event_newGameRBActionPerformed
 
     private void players2RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players2RBActionPerformed
-        // TODO add your handling code here:
+        Labyrinth.numbeOfPlayers = 2;
     }//GEN-LAST:event_players2RBActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabyrinthL;
     private javax.swing.JRadioButton boardSize11RB;
     private javax.swing.JRadioButton boardSize5RB;
     private javax.swing.JRadioButton boardSize7RB;
