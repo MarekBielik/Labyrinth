@@ -11,6 +11,7 @@ import java.rmi.server.LoaderHandler;
 import javax.swing.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent.*;
 import javax.swing.JLayeredPane;
@@ -21,11 +22,7 @@ import javax.swing.JLayeredPane;
  */
 public class GameP extends javax.swing.JPanel {
 
-    public JLayeredPane fieldLP = new JLayeredPane();
-    JLabel wayL = new JLabel();
-    JLabel foo = new JLabel();
-    JLayeredPane bar = new JLayeredPane();
-    
+    public ArrayList<fieldP> pack = new ArrayList<fieldP>();
     
     /**
      * Creates new form GameP
@@ -35,17 +32,17 @@ public class GameP extends javax.swing.JPanel {
         
         switch (Labyrinth.boardSize) {
             case 5: board.setPreferredSize(new java.awt.Dimension(400, 400));
-                  Labyrinth.gui.setSize(900, 750);
-                break;
+                    Labyrinth.gui.setSize(900, 750);
+                    break;
             case 7: board.setPreferredSize(new java.awt.Dimension(550, 550));
-           Labyrinth.gui.setSize(new java.awt.Dimension(800, 850));
-                break;
+                    Labyrinth.gui.setSize(new java.awt.Dimension(800, 850));
+                    break;
             case 9: board.setPreferredSize(new java.awt.Dimension(700, 700));
-            Labyrinth.gui.setSize(900, 950);
-                break;
-            case 11: board.setPreferredSize(new java.awt.Dimension(850, 850));
-            Labyrinth.gui.setSize(1100, 1050);
-                break;
+                    Labyrinth.gui.setSize(900, 950);
+                    break;
+           case 11: board.setPreferredSize(new java.awt.Dimension(850, 850));
+                    Labyrinth.gui.setSize(1100, 1050);
+                    break;
         }
         
         switch (Labyrinth.numbeOfPlayers)
@@ -305,11 +302,11 @@ public class GameP extends javax.swing.JPanel {
 
 
     public void printBoard() {
-        fieldP test = new fieldP(1, 1);
-        fieldP t = new fieldP(1, 1);
-        board.add(test);
-        board.add(t);
-        
+        for(int c = 1; c < Labyrinth.mazeBoard.board.length; c++) {
+            for (int r = 1; r < Labyrinth.mazeBoard.board.length; r++) {
+                board.add(new fieldP(c, r));
+            }
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
