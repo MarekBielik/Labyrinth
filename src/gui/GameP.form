@@ -55,9 +55,6 @@
           <Dimension value="[100, 10]"/>
         </Property>
       </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="switch (Labyrinth.boardSize) {&#xa;    case 5: board.setSize(500, 500);&#xa;                break;&#xa;case 7: board.setSize(700, 700);&#xa;break;&#xa;case 9: board.setSize(900, 900);&#xa;break;&#xa;case 11: board.setSize(1100, 1100);&#xa;}"/>
-      </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
     </Container>

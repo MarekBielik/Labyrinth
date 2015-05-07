@@ -7,6 +7,9 @@ package gui;
 
 import Labyrinth.*;
 import java.awt.*;
+import java.rmi.server.LoaderHandler;
+import javax.swing.*;
+import java.awt.event.*;
 
 /**
  *
@@ -19,6 +22,22 @@ public class GameP extends javax.swing.JPanel {
      */
     public GameP() {
         initComponents();
+        
+        switch (Labyrinth.boardSize) {
+            case 5: board.setPreferredSize(new java.awt.Dimension(400, 400));
+                break;
+            case 7: board.setPreferredSize(new java.awt.Dimension(500, 500));
+                break;
+            case 9: board.setPreferredSize(new java.awt.Dimension(600, 600));
+                break;
+            case 11: board.setPreferredSize(new java.awt.Dimension(500, 500));
+                break;
+}
+        
+        repaint();
+        
+       printBoard();
+        
     }
 
     /**
@@ -35,15 +54,6 @@ public class GameP extends javax.swing.JPanel {
 
         board.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
         board.setPreferredSize(new java.awt.Dimension(100, 10));
-        switch (Labyrinth.boardSize) {
-            case 5: board.setSize(500, 500);
-            break;
-            case 7: board.setSize(700, 700);
-            break;
-            case 9: board.setSize(900, 900);
-            break;
-            case 11: board.setSize(1100, 1100);
-        }
 
         jLabel1.setText("jLabel1");
 
@@ -73,6 +83,12 @@ public class GameP extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
+    public void printBoard() {
+        this.board.add(new JButton("field"));
+        this.board.add(new JButton("field"));
+        this.board.add(new JButton("field"));
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel board;
     private javax.swing.JLabel jLabel1;
