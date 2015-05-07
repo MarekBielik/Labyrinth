@@ -64,8 +64,7 @@ public class GameP extends javax.swing.JPanel {
         
         repaint();
      
-        printBoard();
-        
+        printBoard();   
     }
 
     /**

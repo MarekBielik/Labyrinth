@@ -113,7 +113,8 @@ public class fieldP extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void wayLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wayLMouseClicked
-        
+        System.out.println("User clicked on row:" + r);
+        System.out.println("User clicked on column:" + c);
     }//GEN-LAST:event_wayLMouseClicked
 
     
