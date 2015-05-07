@@ -55,6 +55,18 @@ public class GuiF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFileChooser2 = new javax.swing.JFileChooser();
+        jFileChooser3 = new javax.swing.JFileChooser();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        FileM = new javax.swing.JMenu();
+        LoadGameMI = new javax.swing.JMenuItem();
+        SaveGameMI = new javax.swing.JMenuItem();
+        ExitGameMI = new javax.swing.JMenuItem();
+        EditM = new javax.swing.JMenu();
+        UndoMI = new javax.swing.JMenuItem();
+
+        jFileChooser3.setDialogType(javax.swing.JFileChooser.SAVE_DIALOG);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -63,6 +75,38 @@ public class GuiF extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new java.awt.FlowLayout());
 
+        FileM.setText("File");
+
+        LoadGameMI.setText("Load Game");
+        LoadGameMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoadGameMIActionPerformed(evt);
+            }
+        });
+        FileM.add(LoadGameMI);
+
+        SaveGameMI.setText("Save Game");
+        FileM.add(SaveGameMI);
+
+        ExitGameMI.setText("Exit Game");
+        ExitGameMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitGameMIActionPerformed(evt);
+            }
+        });
+        FileM.add(ExitGameMI);
+
+        jMenuBar1.add(FileM);
+
+        EditM.setText("Edit");
+
+        UndoMI.setText("Undo");
+        EditM.add(UndoMI);
+
+        jMenuBar1.add(EditM);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -70,8 +114,26 @@ public class GuiF extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formWindowOpened
 
+    private void LoadGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadGameMIActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoadGameMIActionPerformed
+
+    private void ExitGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitGameMIActionPerformed
+        // TODO add your handling code here:
+        System.exit(42);
+    }//GEN-LAST:event_ExitGameMIActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu EditM;
+    private javax.swing.JMenuItem ExitGameMI;
+    private javax.swing.JMenu FileM;
+    private javax.swing.JMenuItem LoadGameMI;
+    private javax.swing.JMenuItem SaveGameMI;
+    private javax.swing.JMenuItem UndoMI;
+    private javax.swing.JFileChooser jFileChooser2;
+    private javax.swing.JFileChooser jFileChooser3;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
