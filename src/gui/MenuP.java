@@ -30,6 +30,9 @@ public class MenuP extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SetBoardSize = new javax.swing.ButtonGroup();
+        SetNumberOfPlayers = new javax.swing.ButtonGroup();
+        SetCardPackSize = new javax.swing.ButtonGroup();
         boardSize7RB = new javax.swing.JRadioButton();
         boardSize9RB = new javax.swing.JRadioButton();
         players4RB = new javax.swing.JRadioButton();
@@ -44,6 +47,7 @@ public class MenuP extends javax.swing.JPanel {
         playersL = new javax.swing.JLabel();
         players2RB = new javax.swing.JRadioButton();
 
+        SetBoardSize.add(boardSize7RB);
         boardSize7RB.setText("7");
         boardSize7RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +55,7 @@ public class MenuP extends javax.swing.JPanel {
             }
         });
 
+        SetBoardSize.add(boardSize9RB);
         boardSize9RB.setText("9");
         boardSize9RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +63,7 @@ public class MenuP extends javax.swing.JPanel {
             }
         });
 
+        SetNumberOfPlayers.add(players4RB);
         players4RB.setText("4");
         players4RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +71,7 @@ public class MenuP extends javax.swing.JPanel {
             }
         });
 
+        SetNumberOfPlayers.add(players3RB);
         players3RB.setText("3");
         players3RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +79,7 @@ public class MenuP extends javax.swing.JPanel {
             }
         });
 
+        SetBoardSize.add(boardSize11RB);
         boardSize11RB.setText("11");
         boardSize11RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +87,7 @@ public class MenuP extends javax.swing.JPanel {
             }
         });
 
+        SetCardPackSize.add(cardPackSize12RB);
         cardPackSize12RB.setText("12");
         cardPackSize12RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +95,7 @@ public class MenuP extends javax.swing.JPanel {
             }
         });
 
+        SetCardPackSize.add(cardPackSize24RB);
         cardPackSize24RB.setText("24");
         cardPackSize24RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +103,7 @@ public class MenuP extends javax.swing.JPanel {
             }
         });
 
+        SetBoardSize.add(boardSize5RB);
         boardSize5RB.setText("5");
         boardSize5RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,6 +124,7 @@ public class MenuP extends javax.swing.JPanel {
 
         playersL.setText("Players");
 
+        SetNumberOfPlayers.add(players2RB);
         players2RB.setText("2");
         players2RB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -239,6 +251,9 @@ public class MenuP extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup SetBoardSize;
+    private javax.swing.ButtonGroup SetCardPackSize;
+    private javax.swing.ButtonGroup SetNumberOfPlayers;
     private javax.swing.JRadioButton boardSize11RB;
     private javax.swing.JRadioButton boardSize5RB;
     private javax.swing.JRadioButton boardSize7RB;
