@@ -2,11 +2,11 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="SetBoardSize">
+    <Component class="javax.swing.ButtonGroup" name="SetBoardSizeBG">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="SetNumberOfPlayers">
+    <Component class="javax.swing.ButtonGroup" name="SetNumberOfPlayersBG">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="SetCardPackSize">
+    <Component class="javax.swing.ButtonGroup" name="SetCardPackSizeBG">
     </Component>
   </NonVisualComponents>
   <AuxValues>
@@ -115,7 +115,7 @@
     <Component class="javax.swing.JRadioButton" name="boardSize7RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetBoardSize"/>
+          <ComponentRef name="SetBoardSizeBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="7"/>
       </Properties>
@@ -126,7 +126,7 @@
     <Component class="javax.swing.JRadioButton" name="boardSize9RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetBoardSize"/>
+          <ComponentRef name="SetBoardSizeBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="9"/>
       </Properties>
@@ -137,7 +137,7 @@
     <Component class="javax.swing.JRadioButton" name="players4RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetNumberOfPlayers"/>
+          <ComponentRef name="SetNumberOfPlayersBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="4"/>
       </Properties>
@@ -148,7 +148,7 @@
     <Component class="javax.swing.JRadioButton" name="players3RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetNumberOfPlayers"/>
+          <ComponentRef name="SetNumberOfPlayersBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
@@ -159,7 +159,7 @@
     <Component class="javax.swing.JRadioButton" name="boardSize11RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetBoardSize"/>
+          <ComponentRef name="SetBoardSizeBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="11"/>
       </Properties>
@@ -170,7 +170,7 @@
     <Component class="javax.swing.JRadioButton" name="cardPackSize12RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetCardPackSize"/>
+          <ComponentRef name="SetCardPackSizeBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="12"/>
       </Properties>
@@ -181,7 +181,7 @@
     <Component class="javax.swing.JRadioButton" name="cardPackSize24RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetCardPackSize"/>
+          <ComponentRef name="SetCardPackSizeBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="24"/>
       </Properties>
@@ -192,7 +192,7 @@
     <Component class="javax.swing.JRadioButton" name="boardSize5RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetBoardSize"/>
+          <ComponentRef name="SetBoardSizeBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="5"/>
       </Properties>
@@ -226,7 +226,7 @@
     <Component class="javax.swing.JRadioButton" name="players2RB">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="SetNumberOfPlayers"/>
+          <ComponentRef name="SetNumberOfPlayersBG"/>
         </Property>
         <Property name="text" type="java.lang.String" value="2"/>
       </Properties>
