@@ -17,6 +17,8 @@ import java.awt.event.*;
  */
 public class GameP extends javax.swing.JPanel {
 
+    JLayeredPane fieldLP = new JLayeredPane();
+    
     /**
      * Creates new form GameP
      */
@@ -36,7 +38,8 @@ public class GameP extends javax.swing.JPanel {
             case 11: board.setPreferredSize(new java.awt.Dimension(850, 850));
             Labyrinth.gui.setSize(1100, 1150);
                 break;
-}
+        }
+        
         switch (Labyrinth.numbeOfPlayers)
         {
             case 2:
@@ -54,10 +57,9 @@ public class GameP extends javax.swing.JPanel {
                 break;
         }
         
-        
         repaint();
-        
-       printBoard();
+     
+        printBoard();
         
     }
 
@@ -294,9 +296,7 @@ public class GameP extends javax.swing.JPanel {
 
 
     public void printBoard() {
-        this.board.add(new JButton("field"));
-        this.board.add(new JButton("field"));
-        this.board.add(new JButton("field"));
+        
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
