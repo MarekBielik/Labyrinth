@@ -41,27 +41,36 @@ public class FieldP extends javax.swing.JPanel {
        if (card.contains(UP, DOWN)) {
            wayL.setIcon(new ImageIcon(Labyrinth.iUD));
        }
+       else if (card.contains(LEFT, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       }
+       /* ROH - section */
        else if (card.contains(UP, LEFT)) {
            wayL.setIcon(new ImageIcon(Labyrinth.rohLU));
        }
-       else if (card.contains(LEFT, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       else if (card.contains(UP, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.rohRU));
        }
-       else if (card.contains(LEFT, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       else if (card.contains(DOWN, LEFT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.rohLD));
        }
-       else if (card.contains(LEFT, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       else if (card.contains(DOWN, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.rohRD));
        }
-       else if (card.contains(LEFT, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       /* T - section  */
+       else if (card.contains(LEFT, RIGHT, DOWN)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.tLRD));
        }
-       else if (card.contains(LEFT, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       else if (card.contains(LEFT, RIGHT, UP)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.tLRU));
        }
-       else if (card.contains(LEFT, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       else if (card.contains(LEFT, UP, DOWN)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.tLUD));
        }
+       else if (card.contains(RIGHT, UP, DOWN)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.tRUD));
+       }
+      
        
     }
 

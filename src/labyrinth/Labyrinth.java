@@ -28,6 +28,9 @@ public class Labyrinth {
     public static Image rohRD;
     public static Image rohRU;
     public static Image tLRD;
+    public static Image tLRU;
+    public static Image tLUD;
+    public static Image tRUD;
 
     
     /**
@@ -84,11 +87,31 @@ public class Labyrinth {
             } catch (IOException ex) {}
         
         try {
-             iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
+             rohLD = ImageIO.read(Labyrinth.class.getResource("/media/rohLD.png"));
             } catch (IOException ex) {}
         
         try {
-             iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
+             rohRD = ImageIO.read(Labyrinth.class.getResource("/media/rohRD.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             rohRU = ImageIO.read(Labyrinth.class.getResource("/media/rohRU.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             tLRD = ImageIO.read(Labyrinth.class.getResource("/media/tLRD.png"));
+            } catch (IOException ex) {}
+                
+        try {
+             tLRU = ImageIO.read(Labyrinth.class.getResource("/media/tLRU.png"));
+            } catch (IOException ex) {}
+                
+        try {
+             tLUD = ImageIO.read(Labyrinth.class.getResource("/media/tLUD.png"));
+            } catch (IOException ex) {}
+                
+        try {
+             tRUD = ImageIO.read(Labyrinth.class.getResource("/media/tRUD.png"));
             } catch (IOException ex) {}
     }
     
