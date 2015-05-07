@@ -10,6 +10,10 @@ import java.awt.*;
 import java.rmi.server.LoaderHandler;
 import javax.swing.*;
 import java.awt.event.*;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.JComponent.*;
+import javax.swing.JLayeredPane;
 
 /**
  *
@@ -17,7 +21,10 @@ import java.awt.event.*;
  */
 public class GameP extends javax.swing.JPanel {
 
-    JLayeredPane fieldLP = new JLayeredPane();
+    public JLayeredPane fieldLP = new JLayeredPane();
+    JLabel wayL = new JLabel("f");
+    JLabel foo = new JLabel();
+    
     
     /**
      * Creates new form GameP
@@ -103,6 +110,7 @@ public class GameP extends javax.swing.JPanel {
 
         board.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
         board.setPreferredSize(new java.awt.Dimension(100, 10));
+        board.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 0));
         add(board, java.awt.BorderLayout.CENTER);
 
         PlayersLP.setMinimumSize(new java.awt.Dimension(500, 110));
@@ -296,6 +304,20 @@ public class GameP extends javax.swing.JPanel {
 
 
     public void printBoard() {
+        try {
+            Image img = ImageIO.read(getClass().getResource("/media/iUD.png"));
+            wayL.setIcon(new ImageIcon(img));
+            foo.setIcon(new ImageIcon(img));
+            } catch (IOException ex) {}
+        
+        wayL.setBounds(0, 0, 75, 75);
+        fieldLP.add(wayL, new Integer(1));
+        fieldLP.setPreferredSize(new java.awt.Dimension(75, 75));
+        
+        
+        board.add(wayL);
+        board.add(fieldLP);
+        board.add(foo);
         
     }
     
