@@ -36,8 +36,24 @@ public class GameP extends javax.swing.JPanel {
             case 11: board.setPreferredSize(new java.awt.Dimension(850, 850));
             Labyrinth.gui.setSize(1100, 1150);
                 break;
-                
 }
+        switch (Labyrinth.numbeOfPlayers)
+        {
+            case 2:
+                Player3JP.setVisible(false);
+                Player4JP.setVisible(false);
+                break;
+            case 3:
+                Player4JP.setVisible(false);
+                break;
+            case 4:
+                break;
+            default:
+                Player3JP.setVisible(false);
+                Player4JP.setVisible(false);
+                break;
+        }
+        
         
         repaint();
         
