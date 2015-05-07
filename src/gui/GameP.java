@@ -22,8 +22,9 @@ import javax.swing.JLayeredPane;
 public class GameP extends javax.swing.JPanel {
 
     public JLayeredPane fieldLP = new JLayeredPane();
-    JLabel wayL = new JLabel("f");
+    JLabel wayL = new JLabel();
     JLabel foo = new JLabel();
+    JLayeredPane bar = new JLayeredPane();
     
     
     /**
@@ -307,17 +308,29 @@ public class GameP extends javax.swing.JPanel {
         try {
             Image img = ImageIO.read(getClass().getResource("/media/iUD.png"));
             wayL.setIcon(new ImageIcon(img));
+            } catch (IOException ex) {}
+        
+        try {
+            Image img = ImageIO.read(getClass().getResource("/media/RED1.png"));
             foo.setIcon(new ImageIcon(img));
             } catch (IOException ex) {}
         
         wayL.setBounds(0, 0, 75, 75);
-        fieldLP.add(wayL, new Integer(1));
+        foo.setBounds(0, 0, 25, 25);
+        fieldLP.add(foo, new Integer(1));
+        fieldLP.add(wayL, new Integer(0));
         fieldLP.setPreferredSize(new java.awt.Dimension(75, 75));
         
         
-        board.add(wayL);
-        board.add(fieldLP);
-        board.add(foo);
+        //bar.add(foo, 1);
+        //bar.add(wayL, 0);
+        fieldP test = new fieldP(1, 1);
+        fieldP t = new fieldP(1, 1);
+        board.add(test);
+        board.add(t);
+        //board.add(bar);
+        //board.add(fieldLP);
+        
         
     }
     
