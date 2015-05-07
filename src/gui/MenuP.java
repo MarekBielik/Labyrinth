@@ -5,15 +5,16 @@
  */
 package gui;
 
+import labyrinth.Labyrinth;
 import javax.swing.*;
-import Labyrinth.*;
+import board.*;
 
 /**
  *
  * @author marek
  */
 public class MenuP extends javax.swing.JPanel {
-
+    
     /**
      * Creates new form MenuP
      */
@@ -259,14 +260,10 @@ public class MenuP extends javax.swing.JPanel {
     }//GEN-LAST:event_boardSize5RBActionPerformed
 
     private void newGameRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameRBActionPerformed
-        //super.setVisible(false);
+        Labyrinth.mazeBoard = MazeBoard.createMazeBoard(Labyrinth.boardSize);
+        Labyrinth.mazeBoard.newGame();
         Labyrinth.gui.hideMenu();
-        Labyrinth.gui.displayBoard();
-        
-        
-
-        
-        //super.add(this);
+        Labyrinth.gui.displayBoard();      
     }//GEN-LAST:event_newGameRBActionPerformed
 
     private void players2RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_players2RBActionPerformed

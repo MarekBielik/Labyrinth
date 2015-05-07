@@ -5,7 +5,7 @@
  */
 package gui;
 
-import Labyrinth.*;
+import labyrinth.Labyrinth;
 import java.awt.*;
 import java.rmi.server.LoaderHandler;
 import javax.swing.*;
@@ -305,32 +305,10 @@ public class GameP extends javax.swing.JPanel {
 
 
     public void printBoard() {
-        try {
-            Image img = ImageIO.read(getClass().getResource("/media/iUD.png"));
-            wayL.setIcon(new ImageIcon(img));
-            } catch (IOException ex) {}
-        
-        try {
-            Image img = ImageIO.read(getClass().getResource("/media/RED1.png"));
-            foo.setIcon(new ImageIcon(img));
-            } catch (IOException ex) {}
-        
-        wayL.setBounds(0, 0, 75, 75);
-        foo.setBounds(0, 0, 25, 25);
-        fieldLP.add(foo, new Integer(1));
-        fieldLP.add(wayL, new Integer(0));
-        fieldLP.setPreferredSize(new java.awt.Dimension(75, 75));
-        
-        
-        //bar.add(foo, 1);
-        //bar.add(wayL, 0);
         fieldP test = new fieldP(1, 1);
         fieldP t = new fieldP(1, 1);
         board.add(test);
         board.add(t);
-        //board.add(bar);
-        //board.add(fieldLP);
-        
         
     }
     

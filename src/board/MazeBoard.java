@@ -6,8 +6,8 @@ import static board.MazeCard.CANGO.*;
 
 public class MazeBoard {
 
-    MazeField freeField;
-    MazeField[][] board;
+    public MazeField freeField;
+    public MazeField[][] board;
 
     public static MazeBoard createMazeBoard(int n) {
 

@@ -6,20 +6,64 @@
 package gui;
 
 import board.*;
+import labyrinth.Labyrinth;
+import static board.MazeCard.CANGO.*;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author marek
  */
 public class fieldP extends javax.swing.JPanel {
+    
+    int r;
+    int c;
 
     /**
      * Creates new form fieldP
      */
-    public fieldP( int r, int c) {
+    public fieldP( int c, int r) {
         initComponents();
         
+        this.r = r;
+        this.c = c;
+        
+        setWay(r, c);
+        
         player1L.setIcon(null);
+    }
+    
+    protected void setWay(int c, int r) {
+       MazeCard card;
+       
+       card = Labyrinth.mazeBoard.board[c][r].getCard();
+       
+       if (card.contains(UP, DOWN)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.iUD));
+       }
+       else if (card.contains(UP, LEFT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.rohLU));
+       }
+       else if (card.contains(LEFT, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       }
+       else if (card.contains(LEFT, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       }
+       else if (card.contains(LEFT, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       }
+       else if (card.contains(LEFT, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       }
+       else if (card.contains(LEFT, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       }
+       else if (card.contains(LEFT, RIGHT)) {
+           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+       }
+       
+       Labyrinth.mazeBoard.printBoard();
     }
 
     /**
@@ -36,7 +80,7 @@ public class fieldP extends javax.swing.JPanel {
         player2L = new javax.swing.JLabel();
         player3L = new javax.swing.JLabel();
         player4L = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        wayL = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(75, 75));
         setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0));
@@ -56,23 +100,32 @@ public class fieldP extends javax.swing.JPanel {
         player4L.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/YELLOW1.png"))); // NOI18N
         jLayeredPane1.add(player4L, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/iLR.png"))); // NOI18N
-        jLayeredPane1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        wayL.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        wayL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/iLR.png"))); // NOI18N
+        wayL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                wayLMouseClicked(evt);
+            }
+        });
+        jLayeredPane1.add(wayL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         add(jLayeredPane1);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void wayLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wayLMouseClicked
+        
+    }//GEN-LAST:event_wayLMouseClicked
 
     
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLabel player1L;
     private javax.swing.JLabel player2L;
     private javax.swing.JLabel player3L;
     private javax.swing.JLabel player4L;
+    private javax.swing.JLabel wayL;
     // End of variables declaration//GEN-END:variables
 }

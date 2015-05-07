@@ -1,9 +1,11 @@
-package Labyrinth;
+package labyrinth;
 
 import board.*;
 import gui.GuiF;
+import java.awt.Image;
 
 import java.io.IOException;
+import javax.imageio.ImageIO;
 
 /**
  * Created by marek on 4/12/15.
@@ -17,11 +19,24 @@ public class Labyrinth {
     public static int boardSize = 7;
     public static int numbeOfPlayers;
     public static int cardPackSize;
+    public static MazeBoard mazeBoard;
+    
+    public static Image iUD;
+    public static Image iLR;
+    public static Image rohLD;
+    public static Image rohLU;
+    public static Image rohRD;
+    public static Image rohRU;
+    public static Image tLRD;
+
     
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        initGame();
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -53,4 +68,28 @@ public class Labyrinth {
             }
         });
     }
+    
+    public static void initGame() {
+        
+        try {
+             iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             iLR = ImageIO.read(Labyrinth.class.getResource("/media/iLR.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             rohLU = ImageIO.read(Labyrinth.class.getResource("/media/rohLU.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
+            } catch (IOException ex) {}
+    }
+    
 }
