@@ -63,7 +63,6 @@ public class FieldP extends javax.swing.JPanel {
            wayL.setIcon(new ImageIcon(Labyrinth.iLR));
        }
        
-       Labyrinth.mazeBoard.printBoard();
     }
 
     /**
