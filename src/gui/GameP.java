@@ -25,17 +25,18 @@ public class GameP extends javax.swing.JPanel {
         
         switch (Labyrinth.boardSize) {
             case 5: board.setPreferredSize(new java.awt.Dimension(400, 400));
-                  Labyrinth.gui.setSize(900, 650);
+                  Labyrinth.gui.setSize(900, 950);
                 break;
             case 7: board.setPreferredSize(new java.awt.Dimension(550, 550));
-           Labyrinth.gui.setSize(new java.awt.Dimension(800, 850));
+           Labyrinth.gui.setSize(new java.awt.Dimension(800, 950));
                 break;
             case 9: board.setPreferredSize(new java.awt.Dimension(700, 700));
-            Labyrinth.gui.setSize(900, 950);
+            Labyrinth.gui.setSize(900, 1050);
                 break;
             case 11: board.setPreferredSize(new java.awt.Dimension(850, 850));
-            Labyrinth.gui.setSize(1100, 1100);
+            Labyrinth.gui.setSize(1100, 1150);
                 break;
+                
 }
         
         repaint();
@@ -54,184 +55,225 @@ public class GameP extends javax.swing.JPanel {
     private void initComponents() {
 
         board = new javax.swing.JPanel();
-        jLayeredPane6 = new javax.swing.JLayeredPane();
-        jLayeredPane2 = new javax.swing.JLayeredPane();
-        jLayeredPane4 = new javax.swing.JLayeredPane();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLayeredPane7 = new javax.swing.JLayeredPane();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLayeredPane8 = new javax.swing.JLayeredPane();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLayeredPane5 = new javax.swing.JLayeredPane();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        PlayersLP = new javax.swing.JLayeredPane();
+        Player1JP = new javax.swing.JPanel();
+        P1nameL = new javax.swing.JLabel();
+        P1pictureL = new javax.swing.JLabel();
+        P1skoreL = new javax.swing.JLabel();
+        P1scoreCounterL = new javax.swing.JLabel();
+        Player2JP = new javax.swing.JPanel();
+        P2nameL = new javax.swing.JLabel();
+        P2pictureL = new javax.swing.JLabel();
+        P2scoreL = new javax.swing.JLabel();
+        P2scoreCounterL = new javax.swing.JLabel();
+        Player3JP = new javax.swing.JPanel();
+        P3nameL = new javax.swing.JLabel();
+        P3pictureL = new javax.swing.JLabel();
+        P3scoreL = new javax.swing.JLabel();
+        P3scoreCounterL = new javax.swing.JLabel();
+        Player4JP = new javax.swing.JPanel();
+        P4nameL = new javax.swing.JLabel();
+        P4scoreL = new javax.swing.JLabel();
+        P4scoreCounterL = new javax.swing.JLabel();
+        P4pictureL1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        KartaL = new javax.swing.JLabel();
+        AktualniKartaL = new javax.swing.JLabel();
 
+        setMinimumSize(new java.awt.Dimension(500, 240));
         setLayout(new java.awt.BorderLayout());
 
         board.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
         board.setPreferredSize(new java.awt.Dimension(100, 10));
         add(board, java.awt.BorderLayout.CENTER);
 
-        jLayeredPane6.setPreferredSize(new java.awt.Dimension(251, 154));
+        PlayersLP.setMinimumSize(new java.awt.Dimension(500, 110));
+        PlayersLP.setPreferredSize(new java.awt.Dimension(450, 280));
+        PlayersLP.setLayout(new java.awt.FlowLayout());
 
-        jLabel3.setText("Player 2");
+        Player1JP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Player1JP.setPreferredSize(new java.awt.Dimension(100, 130));
 
-        jLabel7.setText("Skore:");
+        P1nameL.setText("Player 1");
 
-        javax.swing.GroupLayout jLayeredPane4Layout = new javax.swing.GroupLayout(jLayeredPane4);
-        jLayeredPane4.setLayout(jLayeredPane4Layout);
-        jLayeredPane4Layout.setHorizontalGroup(
-            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane4Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel3))
-                .addContainerGap(281, Short.MAX_VALUE))
-        );
-        jLayeredPane4Layout.setVerticalGroup(
-            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane4Layout.createSequentialGroup()
+        P1pictureL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/BLUE1.png"))); // NOI18N
+
+        P1skoreL.setText("Skore:");
+
+        P1scoreCounterL.setText("0");
+
+        javax.swing.GroupLayout Player1JPLayout = new javax.swing.GroupLayout(Player1JP);
+        Player1JP.setLayout(Player1JPLayout);
+        Player1JPLayout.setHorizontalGroup(
+            Player1JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Player1JPLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Player1JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P1nameL)
+                    .addGroup(Player1JPLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(P1pictureL))
+                    .addGroup(Player1JPLayout.createSequentialGroup()
+                        .addComponent(P1skoreL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(P1scoreCounterL)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
-        jLayeredPane4.setLayer(jLabel3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane4.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        jLabel2.setText("Player 3");
-
-        jLabel6.setText("Skore:");
-
-        javax.swing.GroupLayout jLayeredPane7Layout = new javax.swing.GroupLayout(jLayeredPane7);
-        jLayeredPane7.setLayout(jLayeredPane7Layout);
-        jLayeredPane7Layout.setHorizontalGroup(
-            jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane7Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel2))
-                .addContainerGap(281, Short.MAX_VALUE))
-        );
-        jLayeredPane7Layout.setVerticalGroup(
-            jLayeredPane7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane7Layout.createSequentialGroup()
+        Player1JPLayout.setVerticalGroup(
+            Player1JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Player1JPLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(P1nameL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(P1pictureL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Player1JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(P1skoreL)
+                    .addComponent(P1scoreCounterL))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
-        jLayeredPane7.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane7.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jLabel1.setText("Player1");
+        PlayersLP.add(Player1JP);
 
-        jLabel5.setText("Skore:");
+        Player2JP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Player2JP.setPreferredSize(new java.awt.Dimension(100, 130));
 
-        javax.swing.GroupLayout jLayeredPane8Layout = new javax.swing.GroupLayout(jLayeredPane8);
-        jLayeredPane8.setLayout(jLayeredPane8Layout);
-        jLayeredPane8Layout.setHorizontalGroup(
-            jLayeredPane8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane8Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jLayeredPane8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel1))
-                .addContainerGap(281, Short.MAX_VALUE))
-        );
-        jLayeredPane8Layout.setVerticalGroup(
-            jLayeredPane8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane8Layout.createSequentialGroup()
+        P2nameL.setText("Player 2");
+
+        P2pictureL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/GREEN1.png"))); // NOI18N
+
+        P2scoreL.setText("Skore:");
+
+        P2scoreCounterL.setText("0");
+
+        javax.swing.GroupLayout Player2JPLayout = new javax.swing.GroupLayout(Player2JP);
+        Player2JP.setLayout(Player2JPLayout);
+        Player2JPLayout.setHorizontalGroup(
+            Player2JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Player2JPLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGroup(Player2JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P2nameL)
+                    .addComponent(P2pictureL)
+                    .addGroup(Player2JPLayout.createSequentialGroup()
+                        .addComponent(P2scoreL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(P2scoreCounterL)))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
-        jLayeredPane8.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane8.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        jLabel4.setText("Player 4");
-
-        jLabel8.setText("Skore:");
-
-        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
-        jLayeredPane5.setLayout(jLayeredPane5Layout);
-        jLayeredPane5Layout.setHorizontalGroup(
-            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane5Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jLayeredPane5Layout.setVerticalGroup(
-            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+        Player2JPLayout.setVerticalGroup(
+            Player2JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Player2JPLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
+                .addComponent(P2nameL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        jLayeredPane5.setLayer(jLabel4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane5.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
-        jLayeredPane2.setLayout(jLayeredPane2Layout);
-        jLayeredPane2Layout.setHorizontalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane2Layout.createSequentialGroup()
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLayeredPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLayeredPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addComponent(jLayeredPane5)
-                        .addContainerGap())
-                    .addComponent(jLayeredPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        jLayeredPane2Layout.setVerticalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLayeredPane8)
-                    .addComponent(jLayeredPane4))
+                .addComponent(P2pictureL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLayeredPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLayeredPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGroup(Player2JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(P2scoreL)
+                    .addComponent(P2scoreCounterL))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
-        jLayeredPane2.setLayer(jLayeredPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jLayeredPane7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jLayeredPane8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jLayeredPane5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPane6Layout = new javax.swing.GroupLayout(jLayeredPane6);
-        jLayeredPane6.setLayout(jLayeredPane6Layout);
-        jLayeredPane6Layout.setHorizontalGroup(
-            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane2)
-        );
-        jLayeredPane6Layout.setVerticalGroup(
-            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jLayeredPane6.setLayer(jLayeredPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        PlayersLP.add(Player2JP);
 
-        add(jLayeredPane6, java.awt.BorderLayout.PAGE_END);
+        Player3JP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Player3JP.setPreferredSize(new java.awt.Dimension(100, 130));
+
+        P3nameL.setText("Player 3");
+
+        P3pictureL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/YELLOW1.png"))); // NOI18N
+
+        P3scoreL.setText("Skore:");
+
+        P3scoreCounterL.setText("0");
+
+        javax.swing.GroupLayout Player3JPLayout = new javax.swing.GroupLayout(Player3JP);
+        Player3JP.setLayout(Player3JPLayout);
+        Player3JPLayout.setHorizontalGroup(
+            Player3JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Player3JPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Player3JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P3nameL)
+                    .addComponent(P3pictureL)
+                    .addGroup(Player3JPLayout.createSequentialGroup()
+                        .addComponent(P3scoreL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(P3scoreCounterL)))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        Player3JPLayout.setVerticalGroup(
+            Player3JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Player3JPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(P3nameL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(P3pictureL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Player3JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(P3scoreL)
+                    .addComponent(P3scoreCounterL))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        PlayersLP.add(Player3JP);
+
+        Player4JP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Player4JP.setPreferredSize(new java.awt.Dimension(100, 130));
+
+        P4nameL.setText("Player 4");
+
+        P4scoreL.setText("Skore:");
+
+        P4scoreCounterL.setText("0");
+
+        P4pictureL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/RED1.png"))); // NOI18N
+
+        javax.swing.GroupLayout Player4JPLayout = new javax.swing.GroupLayout(Player4JP);
+        Player4JP.setLayout(Player4JPLayout);
+        Player4JPLayout.setHorizontalGroup(
+            Player4JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Player4JPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Player4JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(P4nameL)
+                    .addGroup(Player4JPLayout.createSequentialGroup()
+                        .addComponent(P4scoreL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(P4scoreCounterL))
+                    .addComponent(P4pictureL1))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        Player4JPLayout.setVerticalGroup(
+            Player4JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Player4JPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(P4nameL)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(P4pictureL1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Player4JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(P4scoreL)
+                    .addComponent(P4scoreCounterL))
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        PlayersLP.add(Player4JP);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setMinimumSize(new java.awt.Dimension(140, 130));
+        jPanel1.setPreferredSize(new java.awt.Dimension(100, 130));
+
+        KartaL.setText("Karta:");
+        jPanel1.add(KartaL);
+
+        AktualniKartaL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/s1.png"))); // NOI18N
+        jPanel1.add(AktualniKartaL);
+
+        PlayersLP.add(jPanel1);
+
+        add(PlayersLP, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -242,20 +284,30 @@ public class GameP extends javax.swing.JPanel {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AktualniKartaL;
+    private javax.swing.JLabel KartaL;
+    private javax.swing.JLabel P1nameL;
+    private javax.swing.JLabel P1pictureL;
+    private javax.swing.JLabel P1scoreCounterL;
+    private javax.swing.JLabel P1skoreL;
+    private javax.swing.JLabel P2nameL;
+    private javax.swing.JLabel P2pictureL;
+    private javax.swing.JLabel P2scoreCounterL;
+    private javax.swing.JLabel P2scoreL;
+    private javax.swing.JLabel P3nameL;
+    private javax.swing.JLabel P3pictureL;
+    private javax.swing.JLabel P3scoreCounterL;
+    private javax.swing.JLabel P3scoreL;
+    private javax.swing.JLabel P4nameL;
+    private javax.swing.JLabel P4pictureL1;
+    private javax.swing.JLabel P4scoreCounterL;
+    private javax.swing.JLabel P4scoreL;
+    private javax.swing.JPanel Player1JP;
+    private javax.swing.JPanel Player2JP;
+    private javax.swing.JPanel Player3JP;
+    private javax.swing.JPanel Player4JP;
+    private javax.swing.JLayeredPane PlayersLP;
     private javax.swing.JPanel board;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JLayeredPane jLayeredPane4;
-    private javax.swing.JLayeredPane jLayeredPane5;
-    private javax.swing.JLayeredPane jLayeredPane6;
-    private javax.swing.JLayeredPane jLayeredPane7;
-    private javax.swing.JLayeredPane jLayeredPane8;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
