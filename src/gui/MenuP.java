@@ -222,7 +222,7 @@ public class MenuP extends javax.swing.JPanel {
     }//GEN-LAST:event_cardPackSize24RBActionPerformed
 
     private void boardSize5RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize5RBActionPerformed
-       
+        Labyrinth.boardSize = 5;
     }//GEN-LAST:event_boardSize5RBActionPerformed
 
     private void newGameRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameRBActionPerformed
