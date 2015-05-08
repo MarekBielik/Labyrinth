@@ -6,6 +6,8 @@ import java.awt.Image;
 
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import treasure.CardPack;
+import treasure.Treasure;
 
 /**
  * Created by marek on 4/12/15.
@@ -18,8 +20,9 @@ public class Labyrinth {
     public static GuiF gui;
     public static int boardSize = 7;
     public static int numbeOfPlayers;
-    public static int cardPackSize;
+    public static int cardPackSize = 12;
     public static MazeBoard mazeBoard;
+    public static CardPack pack;
     
     public static Image iUD;
     public static Image iLR;
@@ -31,6 +34,8 @@ public class Labyrinth {
     public static Image tLRU;
     public static Image tLUD;
     public static Image tRUD;
+    
+    public static Image s1Image;
 
     
     /**
@@ -72,8 +77,27 @@ public class Labyrinth {
         });
     }
     
+    
     public static void initGame() {
+        initWayImages();
+        initTreasureImages();
+        Treasure.createSet();
         
+    }
+    
+    /**
+     * Initializes images of treasures.
+     */
+    public static void initTreasureImages() {
+        try {
+             s1Image = ImageIO.read(Labyrinth.class.getResource("/media/s1.png"));
+            } catch (IOException ex) {}
+    }
+    
+    /**
+     * Initializes images of maze ways.
+     */
+    public static void initWayImages() {
         try {
              iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
             } catch (IOException ex) {}
@@ -112,7 +136,6 @@ public class Labyrinth {
                 
         try {
              tRUD = ImageIO.read(Labyrinth.class.getResource("/media/tRUD.png"));
-            } catch (IOException ex) {}
+            } catch (IOException ex) {}        
     }
-    
 }

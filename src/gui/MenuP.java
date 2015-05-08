@@ -8,6 +8,7 @@ package gui;
 import labyrinth.Labyrinth;
 import javax.swing.*;
 import board.*;
+import treasure.CardPack;
 
 /**
  *
@@ -260,8 +261,11 @@ public class MenuP extends javax.swing.JPanel {
     }//GEN-LAST:event_boardSize5RBActionPerformed
 
     private void newGameRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameRBActionPerformed
+        Labyrinth.pack = new CardPack(Labyrinth.cardPackSize, Labyrinth.cardPackSize);
+        Labyrinth.pack.shuffle();
         Labyrinth.mazeBoard = MazeBoard.createMazeBoard(Labyrinth.boardSize);
         Labyrinth.mazeBoard.newGame();
+        
         Labyrinth.gui.hideMenu();
         Labyrinth.gui.displayBoard();      
     }//GEN-LAST:event_newGameRBActionPerformed

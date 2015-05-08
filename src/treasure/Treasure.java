@@ -5,13 +5,14 @@ package treasure;
  */
 public class Treasure {
 
-    protected final int code;
+    public final int code;
 
     protected final static int SIZE_OF_SET = 24;
 
-    protected static Treasure [] treasureSet;
+    public static Treasure [] treasureSet;
+    
 
-    private Treasure(int code) {
+    public Treasure(int code) {
 
         this.code = code;
     }

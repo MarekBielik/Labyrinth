@@ -9,6 +9,7 @@ import board.*;
 import labyrinth.Labyrinth;
 import static board.MazeCard.CANGO.*;
 import javax.swing.ImageIcon;
+import treasure.TreasureCard;
 
 /**
  *
@@ -29,6 +30,7 @@ public class FieldP extends javax.swing.JPanel {
         this.c = c;
         
         setWay(r, c);
+        setTreasure(r, c);
         
         player1L.setIcon(null);
     }
@@ -70,8 +72,20 @@ public class FieldP extends javax.swing.JPanel {
        else if (card.contains(RIGHT, UP, DOWN)) {
            wayL.setIcon(new ImageIcon(Labyrinth.tRUD));
        }
-      
-       
+    }
+    
+    protected void setTreasure(int r, int c) {
+        TreasureCard treasureCard;
+        
+        treasureCard = Labyrinth.mazeBoard.board[r][c].getTreasureCard();
+        
+        if (treasureCard == null)
+            return;
+        
+        if (treasureCard.treasure.code == 1) {
+            treasureL.setIcon(new ImageIcon(Labyrinth.s1Image));
+        }
+        
     }
 
     /**
@@ -88,6 +102,7 @@ public class FieldP extends javax.swing.JPanel {
         player2L = new javax.swing.JLabel();
         player3L = new javax.swing.JLabel();
         player4L = new javax.swing.JLabel();
+        treasureL = new javax.swing.JLabel();
         wayL = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(75, 75));
@@ -107,6 +122,9 @@ public class FieldP extends javax.swing.JPanel {
 
         player4L.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/YELLOW1.png"))); // NOI18N
         jLayeredPane1.add(player4L, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+
+        treasureL.setPreferredSize(new java.awt.Dimension(50, 50));
+        jLayeredPane1.add(treasureL, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
 
         wayL.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         wayL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/iLR.png"))); // NOI18N
@@ -135,6 +153,7 @@ public class FieldP extends javax.swing.JPanel {
     private javax.swing.JLabel player2L;
     private javax.swing.JLabel player3L;
     private javax.swing.JLabel player4L;
+    private javax.swing.JLabel treasureL;
     private javax.swing.JLabel wayL;
     // End of variables declaration//GEN-END:variables
 }

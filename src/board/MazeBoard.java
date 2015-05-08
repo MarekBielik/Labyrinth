@@ -3,6 +3,7 @@ package board;
 import java.util.Random;
 
 import static board.MazeCard.CANGO.*;
+import labyrinth.Labyrinth;
 
 public class MazeBoard {
 
@@ -119,6 +120,9 @@ public class MazeBoard {
                 }
 
                 board[i][j].putCard(tmpCard);
+                
+                if (Labyrinth.pack.size() > 0)
+                    board[i][j].putTreasureCard(Labyrinth.pack.popCard());
             }
         }
 
