@@ -82,99 +82,99 @@ public class FieldP extends javax.swing.JPanel {
         if (treasureCard == null)
             return;
         
-        if (treasureCard.treasure.code == 1) {
+        if (treasureCard.treasure.code == 0) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s1Image));
         }
         
-        if (treasureCard.treasure.code == 2) {
+        if (treasureCard.treasure.code == 1) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s2Image));
         }
         
-        if (treasureCard.treasure.code == 3) {
+        if (treasureCard.treasure.code == 2) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s3Image));
         }
         
-        if (treasureCard.treasure.code == 4) {
+        if (treasureCard.treasure.code == 3) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s4Image));
         }
         
-        if (treasureCard.treasure.code == 5) {
+        if (treasureCard.treasure.code == 4) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s5Image));
         }
         
-        if (treasureCard.treasure.code == 6) {
+        if (treasureCard.treasure.code == 5) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s6Image));
         }   
         
-        if (treasureCard.treasure.code == 7) {
+        if (treasureCard.treasure.code == 6) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s7Image));
         }
         
-        if (treasureCard.treasure.code == 8) {
+        if (treasureCard.treasure.code == 7) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s8Image));
         }
         
-        if (treasureCard.treasure.code == 9) {
+        if (treasureCard.treasure.code == 8) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s9Image));
         }
         
-        if (treasureCard.treasure.code == 10) {
+        if (treasureCard.treasure.code == 9) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s10Image));
         }
         
-        if (treasureCard.treasure.code == 11) {
+        if (treasureCard.treasure.code == 10) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s11Image));
         }
         
-        if (treasureCard.treasure.code == 12) {
+        if (treasureCard.treasure.code == 11) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s12Image));
         }  
         
-        if (treasureCard.treasure.code == 13) {
+        if (treasureCard.treasure.code == 12) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s13Image));
         }
         
-        if (treasureCard.treasure.code == 14) {
+        if (treasureCard.treasure.code == 13) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s14Image));
         }
         
-        if (treasureCard.treasure.code == 15) {
+        if (treasureCard.treasure.code == 14) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s15Image));
         }
         
-        if (treasureCard.treasure.code == 16) {
+        if (treasureCard.treasure.code == 15) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s16Image));
         }
         
-        if (treasureCard.treasure.code == 17) {
+        if (treasureCard.treasure.code == 16) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s17Image));
         }
         
-        if (treasureCard.treasure.code == 18) {
+        if (treasureCard.treasure.code == 17) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s18Image));
         }  
         
-        if (treasureCard.treasure.code == 19) {
+        if (treasureCard.treasure.code == 18) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s19Image));
         }
         
-        if (treasureCard.treasure.code == 20) {
+        if (treasureCard.treasure.code == 19) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s20Image));
         }
         
-        if (treasureCard.treasure.code == 21) {
+        if (treasureCard.treasure.code == 20) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s21Image));
         }
         
-        if (treasureCard.treasure.code == 22) {
+        if (treasureCard.treasure.code == 21) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s22Image));
         }
         
-        if (treasureCard.treasure.code == 23) {
+        if (treasureCard.treasure.code == 22) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s23Image));
         }
         
-        if (treasureCard.treasure.code == 24) {
+        if (treasureCard.treasure.code == 23) {
             treasureL.setIcon(new ImageIcon(Labyrinth.s24Image));
         }          
         
