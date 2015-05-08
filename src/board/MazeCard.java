@@ -37,13 +37,34 @@ public class MazeCard {
         switch (type) {
             case "C":
                 return new MazeCard(LEFT, UP);
+                
+            case "C1":
+                return new MazeCard(DOWN, LEFT);
+                                
+            case "C2":
+                return new MazeCard(RIGHT, DOWN);
+                                                
+            case "C3":
+                return new MazeCard(RIGHT, UP);
 
             case "L":
                 return new MazeCard(LEFT, RIGHT);
-
+            
+            case "L1":
+                return new MazeCard(UP, DOWN);
+            
             case "F":
                 return new MazeCard(LEFT, UP, RIGHT);
 
+            case "F1":
+                return new MazeCard(LEFT, DOWN, RIGHT);
+            
+            case "F2":
+                return new MazeCard(LEFT, UP, DOWN);
+            
+            case "F3":
+                return new MazeCard(DOWN, UP, RIGHT);
+            
             default:
                 throw new IllegalArgumentException();
         }

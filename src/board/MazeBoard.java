@@ -35,7 +35,7 @@ public class MazeBoard {
             for (int j = 1; j < board.length; j++) {
                 r = rand.nextInt(6);
                 t = rand.nextInt(4);
-                /* ROH - section Nutno upravit, rohova policka(jednotlive ify) budou ruzne orientovana */
+                /* ROH - section */
                 if (i == 1 && j==1) 
                 {
                     tmpCard = MazeCard.create("C2");
@@ -52,7 +52,7 @@ public class MazeBoard {
                 {
                     tmpCard = MazeCard.create("C");
                 }
-                /* T - section Nutno upravit, Tecka(jednotlive ify) budou ruzne orientovana viz. zadani(cesty smeruji na hraci desku) */
+                /* T - section */
                 else if (i == 1 && j % 2 != 0 )
                 {
                     tmpCard = MazeCard.create("F1");
