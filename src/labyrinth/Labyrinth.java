@@ -102,25 +102,15 @@ public class Labyrinth {
     
     
     public static void initGame() {
-        initWayImages();
-        initTreasureImages();
+        initImages();
         Treasure.createSet();
         
     }
     
     /**
-     * Initializes images of treasures.
+     * Initializes images of maze ways and treasures.
      */
-    public static void initTreasureImages() {
-        try {
-             s1Image = ImageIO.read(Labyrinth.class.getResource("/media/s1.png"));
-            } catch (IOException ex) {}
-    }
-    
-    /**
-     * Initializes images of maze ways.
-     */
-    public static void initWayImages() {
+    public static void initImages() {
         try {
              iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
             } catch (IOException ex) {}
