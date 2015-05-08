@@ -121,6 +121,7 @@ public class MazeBoard {
 
                 board[i][j].putCard(tmpCard);
                 
+                if(!((i == 1 && j == 1 || j == board.length-1)||(i == board.length-1 && j == 1 || j == board.length-1)))
                 if (Labyrinth.pack.size() > 0)
                     board[i][j].putTreasureCard(Labyrinth.pack.popCard());
             }

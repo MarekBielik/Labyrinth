@@ -216,12 +216,14 @@ public class MenuP extends javax.swing.JPanel {
     private void boardSize7RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize7RBActionPerformed
         // TODO add your handling code here:
         Labyrinth.boardSize = 7;
+        cardPackSize24RB.setVisible(true);
         System.out.println("Board size set on 7");
     }//GEN-LAST:event_boardSize7RBActionPerformed
 
     private void boardSize9RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize9RBActionPerformed
         // TODO add your handling code here:
         Labyrinth.boardSize = 9;
+        cardPackSize24RB.setVisible(true);
         System.out.println("Board size set on 9");
     }//GEN-LAST:event_boardSize9RBActionPerformed
 
@@ -240,6 +242,7 @@ public class MenuP extends javax.swing.JPanel {
     private void boardSize11RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize11RBActionPerformed
         // TODO add your handling code here:
         Labyrinth.boardSize = 11;
+        cardPackSize24RB.setVisible(true);
         System.out.println("Board size set on 11");
     }//GEN-LAST:event_boardSize11RBActionPerformed
 
@@ -258,6 +261,8 @@ public class MenuP extends javax.swing.JPanel {
     private void boardSize5RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardSize5RBActionPerformed
         Labyrinth.boardSize = 5;
         System.out.println("Board size set on 5");
+        cardPackSize12RB.doClick();
+        cardPackSize24RB.setVisible(false);
     }//GEN-LAST:event_boardSize5RBActionPerformed
 
     private void newGameRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameRBActionPerformed

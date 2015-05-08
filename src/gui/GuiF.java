@@ -17,6 +17,8 @@ public class GuiF extends javax.swing.JFrame {
 
     public  MenuP menu;
     public GameP board;
+    public LoadGameP LoadGame;
+    public SaveGameP SaveGame;
     
     /**
      * Creates new form MenuGui
@@ -43,6 +45,24 @@ public class GuiF extends javax.swing.JFrame {
     public void displayMenu() {
         menu = new MenuP();
         this.add(menu);
+    }
+    
+    
+    
+    public void DisplayLoadGame()
+    {
+        LoadGame = new LoadGameP();
+        menu.setVisible(false);
+        this.add(LoadGame);
+        pack();
+    }
+    
+    public void DisplaySaveGame()
+    {
+        SaveGame = new SaveGameP();
+        menu.setVisible(false);
+        this.add(SaveGame);
+        pack();
     }
     
     
@@ -86,6 +106,11 @@ public class GuiF extends javax.swing.JFrame {
         FileM.add(LoadGameMI);
 
         SaveGameMI.setText("Save Game");
+        SaveGameMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveGameMIActionPerformed(evt);
+            }
+        });
         FileM.add(SaveGameMI);
 
         ExitGameMI.setText("Exit Game");
@@ -101,6 +126,11 @@ public class GuiF extends javax.swing.JFrame {
         EditM.setText("Edit");
 
         UndoMI.setText("Undo");
+        UndoMI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UndoMIActionPerformed(evt);
+            }
+        });
         EditM.add(UndoMI);
 
         jMenuBar1.add(EditM);
@@ -116,12 +146,25 @@ public class GuiF extends javax.swing.JFrame {
 
     private void LoadGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadGameMIActionPerformed
         // TODO add your handling code here:
+        System.out.println("Load Game");
+        DisplayLoadGame();
     }//GEN-LAST:event_LoadGameMIActionPerformed
 
     private void ExitGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitGameMIActionPerformed
         // TODO add your handling code here:
         System.exit(42);
     }//GEN-LAST:event_ExitGameMIActionPerformed
+
+    private void SaveGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveGameMIActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Save Game");
+        DisplaySaveGame();
+    }//GEN-LAST:event_SaveGameMIActionPerformed
+
+    private void UndoMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UndoMIActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Undo");
+    }//GEN-LAST:event_UndoMIActionPerformed
 
 
 
