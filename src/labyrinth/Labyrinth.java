@@ -120,19 +120,19 @@ public class Labyrinth {
         
         //init player's images
         try {
-             p1Image = ImageIO.read(Labyrinth.class.getResource("/media/GREEN1.png"));
+             p1Image = ImageIO.read(Labyrinth.class.getResource("/media/BLUE1.png"));
             } catch (IOException ex) {}
         
         try {
-             p2Image = ImageIO.read(Labyrinth.class.getResource("/media/RED1.png"));
+             p2Image = ImageIO.read(Labyrinth.class.getResource("/media/GREEN1.png"));
             } catch (IOException ex) {}
         
         try {
-             p3Image = ImageIO.read(Labyrinth.class.getResource("/media/BLUE1.png"));
+             p3Image = ImageIO.read(Labyrinth.class.getResource("/media/YELLOW1.png"));
             } catch (IOException ex) {}
         
         try {
-             p4Image = ImageIO.read(Labyrinth.class.getResource("/media/YELLOW1.png"));
+             p4Image = ImageIO.read(Labyrinth.class.getResource("/media/RED1.png"));
             } catch (IOException ex) {}
         
         //init ways' images
