@@ -4,9 +4,9 @@ import treasure.TreasureCard;
 
 public class MazeField {
 
-    int row, col;
-    MazeCard mazeCard;
-    TreasureCard treasureCard;
+    public int row, col;
+    public MazeCard mazeCard;
+    public TreasureCard treasureCard;
 
     public MazeField(int row, int col) {
         this.row = row;

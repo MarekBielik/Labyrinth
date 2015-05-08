@@ -33,6 +33,12 @@ public class GuiF extends javax.swing.JFrame {
         pack();
     }
     
+    public void reDrawBoard() {
+        board.setVisible(false);
+        board = new GameP();
+        this.add(board);
+    }
+    
     public void displayBoard() {
         board = new GameP();
         this.add(board);

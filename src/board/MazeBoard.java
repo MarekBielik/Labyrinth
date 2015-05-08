@@ -155,7 +155,7 @@ public class MazeBoard {
             }
         }
         
-        freeField.putCard(tmpCard);
+        freeField.putCard(MazeCard.create("F1"));
          
     }
 

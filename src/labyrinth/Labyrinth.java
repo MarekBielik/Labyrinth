@@ -273,4 +273,24 @@ public class Labyrinth {
  
                 
     }
+    
+    /**
+     * handles user's actions while game play
+     * @param x horizontal coordinate on board
+     * @param y vertical coordinate on board
+     */
+    public static void actionHandler (int x, int y) {
+        //user clicked on free field
+        //free field will be rotated
+        if (x == -1) {
+            mazeBoard.freeField.getCard().turnRight();
+            gui.reDrawBoard();
+            return;
+        }
+        
+        mazeBoard.freeField.col = x;
+        mazeBoard.freeField.row = y;
+        mazeBoard.shift(mazeBoard.freeField);
+        gui.reDrawBoard();
+    }
 }

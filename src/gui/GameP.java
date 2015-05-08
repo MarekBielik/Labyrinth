@@ -327,6 +327,9 @@ public class GameP extends javax.swing.JPanel {
 
 
     public void printBoard() {
+        invalidate();
+        revalidate();
+        
         for(int r = 1; r < Labyrinth.mazeBoard.board.length; r++) {
             for (int c = 1; c < Labyrinth.mazeBoard.board.length; c++) {
                 board.add(new FieldP(c, r));
@@ -336,6 +339,9 @@ public class GameP extends javax.swing.JPanel {
         controlP.add(new FieldP());
         
         playerCard.setIcon(FieldP.getTreasureIcon(Player.players[Player.activePos].treasureCard));
+        invalidate();
+        revalidate();
+        repaint();
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
