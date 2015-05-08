@@ -27,23 +27,26 @@ public class MazeBoard {
     public void newGame() {
         Random rand = new Random();
         int r;
+        Random randT = new Random();
+        int t;        
         MazeCard tmpCard = MazeCard.create("C");
 
         for (int i = 1; i < board.length; i++) {
             for (int j = 1; j < board.length; j++) {
-                r = rand.nextInt(3);
+                r = rand.nextInt(6);
+                t = rand.nextInt(4);
                 /* ROH - section Nutno upravit, rohova policka(jednotlive ify) budou ruzne orientovana */
                 if (i == 1 && j==1) 
                 {
-                    tmpCard = MazeCard.create("C");
+                    tmpCard = MazeCard.create("C2");
                 }
                 else if (i == 1 && j==board.length-1) 
                 {
-                    tmpCard = MazeCard.create("C");
+                    tmpCard = MazeCard.create("C1");
                 }
                 else if (i == board.length-1 && j == 1) 
                 {
-                    tmpCard = MazeCard.create("C");
+                    tmpCard = MazeCard.create("C3");
                 }
                 else if (i == board.length-1 && j == board.length-1) 
                 {
@@ -52,11 +55,11 @@ public class MazeBoard {
                 /* T - section Nutno upravit, Tecka(jednotlive ify) budou ruzne orientovana viz. zadani(cesty smeruji na hraci desku) */
                 else if (i == 1 && j % 2 != 0 )
                 {
-                    tmpCard = MazeCard.create("F");
+                    tmpCard = MazeCard.create("F1");
                 }
                 else if (j == 1 && i % 2 != 0)
                 {
-                    tmpCard = MazeCard.create("F");
+                    tmpCard = MazeCard.create("F3");
                 }
                 else if (i == board.length-1 && j % 2 != 0)
                 {
@@ -64,25 +67,55 @@ public class MazeBoard {
                 }
                 else if (j == board.length-1 && i % 2 != 0)
                 {
-                    tmpCard = MazeCard.create("F");
+                    tmpCard = MazeCard.create("F2");
                 }
                 else if (i % 2 != 0 && j % 2 != 0)
-                {
-                    tmpCard = MazeCard.create("F");
+                { /* nahodne generovani orientace tecek uvnitr hraci desky */
+                    switch (t)
+                    {
+                        case 0:
+                            tmpCard = MazeCard.create("F");
+                            break;
+                            
+                        case 1:
+                            tmpCard = MazeCard.create("F1");
+                            break;
+                            
+                        case 2:
+                            tmpCard = MazeCard.create("F2");
+                            break;
+                            
+                        case 3:
+                            tmpCard = MazeCard.create("F3");
+                            break;                            
+                    }
                 }
-                else
+                else /* nahodne generovani zbytku */
                 switch (r) {
                     case 0:
-                        tmpCard = MazeCard.create("C");
-                        break;
-
-                    case 1:
                         tmpCard = MazeCard.create("L");
                         break;
 
-                    case 2:
-                        tmpCard = MazeCard.create("F");
+                    case 1:
+                        tmpCard = MazeCard.create("L1");
                         break;
+
+                    case 2:
+                        tmpCard = MazeCard.create("C");
+                        break;
+                        
+                    case 3:
+                        tmpCard = MazeCard.create("C1");
+                        break;
+                        
+                    case 4:
+                        tmpCard = MazeCard.create("C2");
+                        break;
+                      
+                    case 5:
+                        tmpCard = MazeCard.create("C3");
+                        break;
+                     
                 }
 
                 board[i][j].putCard(tmpCard);
