@@ -29,7 +29,14 @@ public class MazeBoard {
         Random rand = new Random();
         int r;
         Random randT = new Random();
-        int t;        
+        int t;
+        
+        Random randX = new Random();
+        int x;
+        
+        Random randY = new Random();
+        int y;
+        
         MazeCard tmpCard = MazeCard.create("C");
 
         for (int i = 1; i < board.length; i++) {
@@ -118,16 +125,41 @@ public class MazeBoard {
                         break;
                      
                 }
-
                 board[i][j].putCard(tmpCard);
-                
-                if(!((i == 1 && j == 1 || j == board.length-1)||(i == board.length-1 && j == 1 || j == board.length-1)))
-                if (Labyrinth.pack.size() > 0)
-                    board[i][j].putTreasureCard(Labyrinth.pack.popCard());
+                                
             }
+            
         }
 
+
+        /*x = 1;
+        y = board.length-1;
+        if(!((x == 1 && (y == 1 || y == board.length-1))||(x == board.length-1 && (y == 1 || y == board.length-1))))
+        {
+            board[x][y].putTreasureCard(Labyrinth.pack.popCard());
+        }
+        //board[x][y].putTreasureCard(Labyrinth.pack.popCard());
+        */
+        
+        while(Labyrinth.pack.size()>0)
+        {
+        x = rand.nextInt(board.length-1);
+        y = rand.nextInt(board.length-1);
+        //System.out.println(x + " " + " " + y);
+        
+        //if(!((x == 1 && (y == 1 || y == board.length-1))||(x == board.length-1 && (y == 1 || y == board.length-1))))
+        
+        if ((board[x+1][y+1].getTreasureCard() == null) || (!((x == 1 && (y == 1 || y == board.length-1))||(x == board.length-1 && (y == 1 || y == board.length-1)))))
+        {
+
+        //System.out.println(x + " " + " " + y);
+        board[x+1][y+1].putTreasureCard(Labyrinth.pack.popCard());
+        }
+        }
+        
+        
         freeField.putCard(tmpCard);
+         
     }
 
     public MazeField get(int r, int c) {
