@@ -26,14 +26,16 @@ public class MazeBoard {
     }
 
     public void newGame() {
+        /* hraci kameny */
         Random rand = new Random();
         int r;
+        /* hraci kameny T */
         Random randT = new Random();
         int t;
-        
+        /* umisteni pokladu X */
         Random randX = new Random();
         int x;
-        
+        /* umisteni pokladu Y */
         Random randY = new Random();
         int y;
         
@@ -132,31 +134,26 @@ public class MazeBoard {
         }
 
 
-        /*x = 1;
-        y = board.length-1;
-        if(!((x == 1 && (y == 1 || y == board.length-1))||(x == board.length-1 && (y == 1 || y == board.length-1))))
-        {
-            board[x][y].putTreasureCard(Labyrinth.pack.popCard());
-        }
-        //board[x][y].putTreasureCard(Labyrinth.pack.popCard());
-        */
-        
+    /* nahodne vygenerovani umisteni hracich karet */  
         while(Labyrinth.pack.size()>0)
-        {
-        x = rand.nextInt(board.length-1);
-        y = rand.nextInt(board.length-1);
-        //System.out.println(x + " " + " " + y);
-        
-        //if(!((x == 1 && (y == 1 || y == board.length-1))||(x == board.length-1 && (y == 1 || y == board.length-1))))
-        
-        if ((board[x+1][y+1].getTreasureCard() == null) || (!((x == 1 && (y == 1 || y == board.length-1))||(x == board.length-1 && (y == 1 || y == board.length-1)))))
-        {
-
-        //System.out.println(x + " " + " " + y);
-        board[x+1][y+1].putTreasureCard(Labyrinth.pack.popCard());
+        {    
+            x = rand.nextInt(board.length-1);
+            y = rand.nextInt(board.length-1);
+            x++;
+            y++;
+            if (x == 1 && y == 1) ;
+            else
+            if (x == 1 && y == board.length-1) ;
+            else
+            if (x == board.length-1 && y == 1) ;
+            else
+            if (x == board.length-1 && y == board.length-1) ;
+            else
+            if ((board[x][y].getTreasureCard() == null))
+            {
+                board[x][y].putTreasureCard(Labyrinth.pack.popCard());
+            }
         }
-        }
-        
         
         freeField.putCard(tmpCard);
          
