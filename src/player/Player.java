@@ -71,9 +71,10 @@ public class Player {
        public Player(int n) {
            switch(n) {
                case 0:
-                   x = 1;
+                   x = 2;
                    y = 1;
                    break;
+                   
                case 1:
                    x = Labyrinth.boardSize;
                    y = Labyrinth.boardSize;
