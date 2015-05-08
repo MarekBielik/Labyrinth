@@ -31,17 +31,22 @@ public class GameP extends javax.swing.JPanel {
         initComponents();
         
         switch (Labyrinth.boardSize) {
-            case 5: board.setPreferredSize(new java.awt.Dimension(400, 400));
-                    Labyrinth.gui.setSize(900, 750);
+            
+            case 5: board.setPreferredSize(new java.awt.Dimension(380, 380));
+                    Labyrinth.gui.setSize(380, 700);
+                    this.setPreferredSize(new java.awt.Dimension(380, 700));
                     break;
             case 7: board.setPreferredSize(new java.awt.Dimension(550, 550));
-                    Labyrinth.gui.setSize(new java.awt.Dimension(800, 850));
+                    this.setPreferredSize(new java.awt.Dimension(600, 850));
+                    Labyrinth.gui.setSize(530, 850);                
                     break;
-            case 9: board.setPreferredSize(new java.awt.Dimension(700, 700));
-                    Labyrinth.gui.setSize(900, 950);
+            case 9: Labyrinth.gui.setSize(680, 1000);
+                    board.setPreferredSize(new java.awt.Dimension(680, 680));
+                    this.setPreferredSize(new java.awt.Dimension(900, 1000));              
                     break;
-           case 11: board.setPreferredSize(new java.awt.Dimension(850, 850));
-                    Labyrinth.gui.setSize(1100, 1050);
+           case 11: board.setPreferredSize(new java.awt.Dimension(830, 830));
+                    this.setPreferredSize(new java.awt.Dimension(830, 1100));
+                    Labyrinth.gui.setSize(830, 1100);
                     break;
         }
         
@@ -98,24 +103,27 @@ public class GameP extends javax.swing.JPanel {
         P4scoreL = new javax.swing.JLabel();
         P4scoreCounterL = new javax.swing.JLabel();
         P4pictureL1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        KartaL = new javax.swing.JLabel();
+        controlP = new javax.swing.JPanel();
+        playerTreasureP = new javax.swing.JPanel();
+        actualPlayer = new javax.swing.JLabel();
         AktualniKartaL = new javax.swing.JLabel();
+        nextB = new javax.swing.JButton();
 
-        setMinimumSize(new java.awt.Dimension(500, 200));
-        setLayout(new java.awt.BorderLayout());
+        setMinimumSize(new java.awt.Dimension(100, 200));
+        setPreferredSize(new java.awt.Dimension(0, 0));
 
-        board.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 10));
-        board.setPreferredSize(new java.awt.Dimension(100, 10));
-        board.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 0, 0));
-        add(board, java.awt.BorderLayout.CENTER);
+        board.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 0));
+        board.setMinimumSize(new java.awt.Dimension(375, 375));
+        board.setPreferredSize(new java.awt.Dimension(380, 380));
+        board.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0));
+        add(board);
 
         PlayersLP.setMinimumSize(new java.awt.Dimension(500, 110));
-        PlayersLP.setPreferredSize(new java.awt.Dimension(450, 280));
+        PlayersLP.setPreferredSize(new java.awt.Dimension(450, 220));
         PlayersLP.setLayout(new java.awt.FlowLayout());
 
         Player1JP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Player1JP.setPreferredSize(new java.awt.Dimension(100, 130));
+        Player1JP.setPreferredSize(new java.awt.Dimension(90, 100));
 
         P1nameL.setText("Player 1");
 
@@ -140,7 +148,7 @@ public class GameP extends javax.swing.JPanel {
                         .addComponent(P1skoreL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(P1scoreCounterL)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         Player1JPLayout.setVerticalGroup(
             Player1JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,13 +161,13 @@ public class GameP extends javax.swing.JPanel {
                 .addGroup(Player1JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(P1skoreL)
                     .addComponent(P1scoreCounterL))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         PlayersLP.add(Player1JP);
 
         Player2JP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Player2JP.setPreferredSize(new java.awt.Dimension(100, 130));
+        Player2JP.setPreferredSize(new java.awt.Dimension(90, 100));
 
         P2nameL.setText("Player 2");
 
@@ -182,7 +190,7 @@ public class GameP extends javax.swing.JPanel {
                         .addComponent(P2scoreL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(P2scoreCounterL)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         Player2JPLayout.setVerticalGroup(
             Player2JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,13 +203,13 @@ public class GameP extends javax.swing.JPanel {
                 .addGroup(Player2JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(P2scoreL)
                     .addComponent(P2scoreCounterL))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         PlayersLP.add(Player2JP);
 
         Player3JP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Player3JP.setPreferredSize(new java.awt.Dimension(100, 130));
+        Player3JP.setPreferredSize(new java.awt.Dimension(90, 100));
 
         P3nameL.setText("Player 3");
 
@@ -224,7 +232,7 @@ public class GameP extends javax.swing.JPanel {
                         .addComponent(P3scoreL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(P3scoreCounterL)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         Player3JPLayout.setVerticalGroup(
             Player3JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,13 +245,13 @@ public class GameP extends javax.swing.JPanel {
                 .addGroup(Player3JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(P3scoreL)
                     .addComponent(P3scoreCounterL))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         PlayersLP.add(Player3JP);
 
         Player4JP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Player4JP.setPreferredSize(new java.awt.Dimension(100, 130));
+        Player4JP.setPreferredSize(new java.awt.Dimension(90, 100));
 
         P4nameL.setText("Player 4");
 
@@ -266,7 +274,7 @@ public class GameP extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(P4scoreCounterL))
                     .addComponent(P4pictureL1))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         Player4JPLayout.setVerticalGroup(
             Player4JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,25 +287,42 @@ public class GameP extends javax.swing.JPanel {
                 .addGroup(Player4JPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(P4scoreL)
                     .addComponent(P4scoreCounterL))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         PlayersLP.add(Player4JP);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.setMinimumSize(new java.awt.Dimension(140, 130));
-        jPanel1.setPreferredSize(new java.awt.Dimension(100, 130));
+        controlP.setPreferredSize(new java.awt.Dimension(380, 110));
 
-        KartaL.setText("Karta:");
-        jPanel1.add(KartaL);
+        playerTreasureP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        playerTreasureP.setMinimumSize(new java.awt.Dimension(140, 130));
+        playerTreasureP.setPreferredSize(new java.awt.Dimension(90, 100));
+        playerTreasureP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        actualPlayer.setText("Player1:");
+        playerTreasureP.add(actualPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 20));
 
         AktualniKartaL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/s1.png"))); // NOI18N
-        jPanel1.add(AktualniKartaL);
+        playerTreasureP.add(AktualniKartaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 50, 50));
 
-        PlayersLP.add(jPanel1);
+        controlP.add(playerTreasureP);
 
-        add(PlayersLP, java.awt.BorderLayout.PAGE_END);
+        nextB.setText("Next");
+        nextB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextBActionPerformed(evt);
+            }
+        });
+        controlP.add(nextB);
+
+        PlayersLP.add(controlP);
+
+        add(PlayersLP);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nextBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nextBActionPerformed
 
 
     public void printBoard() {
@@ -306,11 +331,12 @@ public class GameP extends javax.swing.JPanel {
                 board.add(new FieldP(c, r));
             }
         }
+        
+        controlP.add(new FieldP());
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AktualniKartaL;
-    private javax.swing.JLabel KartaL;
     private javax.swing.JLabel P1nameL;
     private javax.swing.JLabel P1pictureL;
     private javax.swing.JLabel P1scoreCounterL;
@@ -332,7 +358,10 @@ public class GameP extends javax.swing.JPanel {
     private javax.swing.JPanel Player3JP;
     private javax.swing.JPanel Player4JP;
     private javax.swing.JLayeredPane PlayersLP;
+    private javax.swing.JLabel actualPlayer;
     private javax.swing.JPanel board;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel controlP;
+    private javax.swing.JButton nextB;
+    private javax.swing.JPanel playerTreasureP;
     // End of variables declaration//GEN-END:variables
 }

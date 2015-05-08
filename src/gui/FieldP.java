@@ -17,9 +17,17 @@ import treasure.TreasureCard;
  */
 public class FieldP extends javax.swing.JPanel {
     
-    int r;
-    int c;
+    int r = -1;
+    int c = -1;
 
+    
+    public FieldP() {
+        initComponents();
+        
+        setWay(c, r);
+        setTreasure(r, c);
+    }
+    
     /**
      * Creates new form fieldP
      */
@@ -38,7 +46,10 @@ public class FieldP extends javax.swing.JPanel {
     protected void setWay(int c, int r) {
        MazeCard card;
        
-       card = Labyrinth.mazeBoard.board[c][r].getCard();
+       if (c == -1)
+           card = Labyrinth.mazeBoard.freeField.getCard();
+       else
+           card = Labyrinth.mazeBoard.board[c][r].getCard();
        
        if (card.contains(UP, DOWN)) {
            wayL.setIcon(new ImageIcon(Labyrinth.iUD));
@@ -77,7 +88,10 @@ public class FieldP extends javax.swing.JPanel {
     protected void setTreasure(int r, int c) {
         TreasureCard treasureCard;
         
-        treasureCard = Labyrinth.mazeBoard.board[r][c].getTreasureCard();
+        if (c == -1)
+            treasureCard = Labyrinth.mazeBoard.freeField.getTreasureCard();
+        else
+            treasureCard = Labyrinth.mazeBoard.board[r][c].getTreasureCard();
         
         if (treasureCard == null)
             return;
