@@ -19,7 +19,7 @@ public class Labyrinth {
      */
     public static GuiF gui;
     public static int boardSize = 7;
-    public static int numbeOfPlayers;
+    public static int numbeOfPlayers = 2;
     public static int cardPackSize = 12;
     public static MazeBoard mazeBoard;
     public static CardPack pack;
@@ -59,6 +59,12 @@ public class Labyrinth {
     public static Image s22Image;
     public static Image s23Image;
     public static Image s24Image;
+    
+    public static Image p1Image;
+    public static Image p2Image;
+    public static Image p3Image;
+    public static Image p4Image;
+    
 
     
     /**
@@ -111,6 +117,25 @@ public class Labyrinth {
      * Initializes images of maze ways and treasures.
      */
     public static void initImages() {
+        
+        //init player's images
+        try {
+             p1Image = ImageIO.read(Labyrinth.class.getResource("/media/GREEN1.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             p2Image = ImageIO.read(Labyrinth.class.getResource("/media/RED1.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             p3Image = ImageIO.read(Labyrinth.class.getResource("/media/BLUE1.png"));
+            } catch (IOException ex) {}
+        
+        try {
+             p4Image = ImageIO.read(Labyrinth.class.getResource("/media/YELLOW1.png"));
+            } catch (IOException ex) {}
+        
+        //init ways' images
         try {
              iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
             } catch (IOException ex) {}

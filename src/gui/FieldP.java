@@ -9,6 +9,7 @@ import board.*;
 import labyrinth.Labyrinth;
 import static board.MazeCard.CANGO.*;
 import javax.swing.ImageIcon;
+import player.Player;
 import treasure.TreasureCard;
 
 /**
@@ -20,16 +21,33 @@ public class FieldP extends javax.swing.JPanel {
     int r = -1;
     int c = -1;
 
+    TreasureCard treasureCard;
     
+    /**
+     * shows free field
+     */
     public FieldP() {
         initComponents();
         
         setWay(c, r);
-        setTreasure(r, c);
+        
+        //get free field
+        treasureCard = Labyrinth.mazeBoard.freeField.getTreasureCard();
+        
+        if (treasureCard == null)  //in case of field without treasure card
+            treasureL.setIcon(null);
+        else
+            treasureL.setIcon(getTreasureIcon(treasureCard));
+        
+        //there are no players on free field
+        player1L.setIcon(null);
+        player2L.setIcon(null);
+        player3L.setIcon(null);
+        player4L.setIcon(null);
     }
     
     /**
-     * Creates new form fieldP
+     * shows field in board
      */
     public FieldP( int c, int r) {
         initComponents();
@@ -38,9 +56,29 @@ public class FieldP extends javax.swing.JPanel {
         this.c = c;
         
         setWay(r, c);
-        setTreasure(r, c);
         
-        player1L.setIcon(null);
+        treasureCard = Labyrinth.mazeBoard.board[r][c].getTreasureCard();
+        
+        if (treasureCard == null)  //in case of field without treasure card
+            treasureL.setIcon(null);
+        else
+            treasureL.setIcon(getTreasureIcon(treasureCard));
+        
+        //find out whether any players are on the field or not
+        for (int n = 0; n < Labyrinth.numbeOfPlayers; n++) {
+            if (n == 0 && Player.isPlayerOnField(n, c, r))
+                player1L.setIcon(new ImageIcon(Labyrinth.p1Image));
+            
+            if (n == 1 && Player.isPlayerOnField(n, c, r))
+                player2L.setIcon(new ImageIcon(Labyrinth.p2Image));
+            
+            if (n == 2 && Player.isPlayerOnField(n ,c, r))
+                player3L.setIcon(new ImageIcon(Labyrinth.p3Image));
+            
+            if (n == 3 && Player.isPlayerOnField(n, c, r))
+                player4L.setIcon(new ImageIcon(Labyrinth.p4Image));
+        }
+        
     }
     
     protected void setWay(int c, int r) {
@@ -85,114 +123,107 @@ public class FieldP extends javax.swing.JPanel {
        }
     }
     
-    protected void setTreasure(int r, int c) {
-        TreasureCard treasureCard;
+    public static ImageIcon getTreasureIcon( TreasureCard treasureCard) {
         
-        if (c == -1)
-            treasureCard = Labyrinth.mazeBoard.freeField.getTreasureCard();
-        else
-            treasureCard = Labyrinth.mazeBoard.board[r][c].getTreasureCard();
-        
-        if (treasureCard == null)
-            return;
-        
+
         if (treasureCard.treasure.code == 0) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s1Image));
+            return (new ImageIcon(Labyrinth.s1Image));
         }
         
-        if (treasureCard.treasure.code == 1) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s2Image));
+        else if (treasureCard.treasure.code == 1) {
+            return (new ImageIcon(Labyrinth.s2Image));
         }
         
-        if (treasureCard.treasure.code == 2) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s3Image));
+        else if (treasureCard.treasure.code == 2) {
+            return (new ImageIcon(Labyrinth.s3Image));
         }
         
-        if (treasureCard.treasure.code == 3) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s4Image));
+        else if (treasureCard.treasure.code == 3) {
+            return (new ImageIcon(Labyrinth.s4Image));
         }
         
-        if (treasureCard.treasure.code == 4) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s5Image));
+        else if (treasureCard.treasure.code == 4) {
+            return (new ImageIcon(Labyrinth.s5Image));
         }
         
-        if (treasureCard.treasure.code == 5) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s6Image));
+        else if (treasureCard.treasure.code == 5) {
+            return (new ImageIcon(Labyrinth.s6Image));
         }   
         
-        if (treasureCard.treasure.code == 6) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s7Image));
+        else if (treasureCard.treasure.code == 6) {
+            return (new ImageIcon(Labyrinth.s7Image));
         }
         
-        if (treasureCard.treasure.code == 7) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s8Image));
+        else if (treasureCard.treasure.code == 7) {
+            return (new ImageIcon(Labyrinth.s8Image));
         }
         
-        if (treasureCard.treasure.code == 8) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s9Image));
+        else if (treasureCard.treasure.code == 8) {
+            return (new ImageIcon(Labyrinth.s9Image));
         }
         
-        if (treasureCard.treasure.code == 9) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s10Image));
+        else if (treasureCard.treasure.code == 9) {
+            return (new ImageIcon(Labyrinth.s10Image));
         }
         
-        if (treasureCard.treasure.code == 10) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s11Image));
+        else if (treasureCard.treasure.code == 10) {
+            return (new ImageIcon(Labyrinth.s11Image));
         }
         
-        if (treasureCard.treasure.code == 11) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s12Image));
+        else if (treasureCard.treasure.code == 11) {
+            return (new ImageIcon(Labyrinth.s12Image));
         }  
         
-        if (treasureCard.treasure.code == 12) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s13Image));
+        else if (treasureCard.treasure.code == 12) {
+            return (new ImageIcon(Labyrinth.s13Image));
         }
         
-        if (treasureCard.treasure.code == 13) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s14Image));
+        else if (treasureCard.treasure.code == 13) {
+            return (new ImageIcon(Labyrinth.s14Image));
         }
         
-        if (treasureCard.treasure.code == 14) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s15Image));
+        else if (treasureCard.treasure.code == 14) {
+            return (new ImageIcon(Labyrinth.s15Image));
         }
         
-        if (treasureCard.treasure.code == 15) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s16Image));
+        else if (treasureCard.treasure.code == 15) {
+            return (new ImageIcon(Labyrinth.s16Image));
         }
         
-        if (treasureCard.treasure.code == 16) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s17Image));
+        else if (treasureCard.treasure.code == 16) {
+            return (new ImageIcon(Labyrinth.s17Image));
         }
         
-        if (treasureCard.treasure.code == 17) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s18Image));
+        else if (treasureCard.treasure.code == 17) {
+            return (new ImageIcon(Labyrinth.s18Image));
         }  
         
-        if (treasureCard.treasure.code == 18) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s19Image));
+        else if (treasureCard.treasure.code == 18) {
+            return (new ImageIcon(Labyrinth.s19Image));
         }
         
-        if (treasureCard.treasure.code == 19) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s20Image));
+        else if (treasureCard.treasure.code == 19) {
+            return (new ImageIcon(Labyrinth.s20Image));
         }
         
-        if (treasureCard.treasure.code == 20) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s21Image));
+        else if (treasureCard.treasure.code == 20) {
+            return (new ImageIcon(Labyrinth.s21Image));
         }
         
-        if (treasureCard.treasure.code == 21) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s22Image));
+        else if (treasureCard.treasure.code == 21) {
+            return (new ImageIcon(Labyrinth.s22Image));
         }
         
-        if (treasureCard.treasure.code == 22) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s23Image));
+        else if (treasureCard.treasure.code == 22) {
+            return (new ImageIcon(Labyrinth.s23Image));
         }
         
-        if (treasureCard.treasure.code == 23) {
-            treasureL.setIcon(new ImageIcon(Labyrinth.s24Image));
+        else {
+            return (new ImageIcon(Labyrinth.s24Image));
         }          
         
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -216,17 +247,9 @@ public class FieldP extends javax.swing.JPanel {
 
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(75, 75));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        player1L.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/BLUE1.png"))); // NOI18N
         jLayeredPane1.add(player1L, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        player2L.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/GREEN1.png"))); // NOI18N
         jLayeredPane1.add(player2L, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, -1));
-
-        player3L.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/RED1.png"))); // NOI18N
         jLayeredPane1.add(player3L, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
-
-        player4L.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/YELLOW1.png"))); // NOI18N
         jLayeredPane1.add(player4L, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
         treasureL.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -248,9 +271,6 @@ public class FieldP extends javax.swing.JPanel {
         System.out.println("User clicked on row:" + r);
         System.out.println("User clicked on column:" + c);
     }//GEN-LAST:event_wayLMouseClicked
-
-    
-    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

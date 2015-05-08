@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent.*;
 import javax.swing.JLayeredPane;
+import player.Player;
 
 /**
  *
@@ -106,7 +107,7 @@ public class GameP extends javax.swing.JPanel {
         controlP = new javax.swing.JPanel();
         playerTreasureP = new javax.swing.JPanel();
         actualPlayer = new javax.swing.JLabel();
-        AktualniKartaL = new javax.swing.JLabel();
+        playerCard = new javax.swing.JLabel();
         nextB = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(100, 200));
@@ -302,8 +303,8 @@ public class GameP extends javax.swing.JPanel {
         actualPlayer.setText("Player1:");
         playerTreasureP.add(actualPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 20));
 
-        AktualniKartaL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/s1.png"))); // NOI18N
-        playerTreasureP.add(AktualniKartaL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 50, 50));
+        playerCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/s1.png"))); // NOI18N
+        playerTreasureP.add(playerCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 50, 50));
 
         controlP.add(playerTreasureP);
 
@@ -333,10 +334,11 @@ public class GameP extends javax.swing.JPanel {
         }
         
         controlP.add(new FieldP());
+        
+        playerCard.setIcon(FieldP.getTreasureIcon(Player.players[Player.activePos].treasureCard));
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel AktualniKartaL;
     private javax.swing.JLabel P1nameL;
     private javax.swing.JLabel P1pictureL;
     private javax.swing.JLabel P1scoreCounterL;
@@ -362,6 +364,7 @@ public class GameP extends javax.swing.JPanel {
     private javax.swing.JPanel board;
     private javax.swing.JPanel controlP;
     private javax.swing.JButton nextB;
+    private javax.swing.JLabel playerCard;
     private javax.swing.JPanel playerTreasureP;
     // End of variables declaration//GEN-END:variables
 }
