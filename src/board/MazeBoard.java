@@ -4,13 +4,27 @@ import java.util.Random;
 
 import static board.MazeCard.CANGO.*;
 import labyrinth.Labyrinth;
-import treasure.TreasureCard;
+
 
 public class MazeBoard {
 
+    /**
+     * game mode
+     */
+    public enum MODE {
+        TURN,
+        MOVE
+    }
+    
+    public MODE mode;
+    
     public MazeField freeField;
     public MazeField[][] board;
 
+    public void setMode (MODE mode) {
+        this.mode = mode;
+    }
+    
     public static MazeBoard createMazeBoard(int n) {
 
         return new MazeBoard(n);
@@ -176,20 +190,21 @@ public class MazeBoard {
  * Shift: posune policka
  * @param mf 
  */
-    public void shift(MazeField mf) {
+    public boolean shift(MazeField mf) {
         int c = mf.col();
         int r = mf.row();
         MazeCard tmpFreeCard;
         int lastIndex = board.length - 1;
-        
+        boolean boardShifted = false;
         
         if(r > lastIndex || c > lastIndex)
-            return;
+            return boardShifted;
         
         
         /* ↓ */
         if (r == 1 && c % 2 == 0) {
             System.out.println("↓");
+            boardShifted = true;
 
             tmpFreeCard = board[lastIndex][c].getCard();
 
@@ -295,6 +310,7 @@ public class MazeBoard {
         }
         /* → */
         else if (r % 2 == 0 && c == 1) {
+            boardShifted = true;
             System.out.println("→");
             tmpFreeCard = board[r][lastIndex].getCard();
 
@@ -400,6 +416,7 @@ public class MazeBoard {
         /* ↑ */
         else    
         if (r == lastIndex && c % 2 == 0) {
+            boardShifted = true;
             System.out.println("↑");
             
             
@@ -504,6 +521,7 @@ public class MazeBoard {
         }
         /* ← */
         else if (r % 2 == 0 && c == lastIndex) {
+            boardShifted = true;
             System.out.println("←");
             tmpFreeCard = board[r][1].getCard();
 
@@ -604,6 +622,8 @@ public class MazeBoard {
             }
             }
         }
+        
+        return boardShifted;
     }
 
     public void printBoard() {

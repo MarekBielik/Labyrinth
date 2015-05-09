@@ -2,10 +2,12 @@ package labyrinth;
 
 import board.*;
 import gui.GuiF;
+import gui.WinnerF;
 import java.awt.Image;
 
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import player.Player;
 import treasure.CardPack;
 import treasure.Treasure;
 
@@ -14,9 +16,6 @@ import treasure.Treasure;
  */
 public class Labyrinth {
 
-    /**
-     *
-     */
     public static GuiF gui;
     public static int boardSize = 7;
     public static int numbeOfPlayers = 2;
@@ -280,17 +279,109 @@ public class Labyrinth {
      * @param y vertical coordinate on board
      */
     public static void actionHandler (int x, int y) {
-        //user clicked on free field
-        //free field will be rotated
+        
+        int xDif;
+        int yDif;
+        
         if (x == -1) {
-            mazeBoard.freeField.getCard().turnRight();
-            gui.reDrawBoard();
-            return;
+            //user clicked on free field
+            //free field will be rotated
+            //only if the game is in TURN mode
+            if (mazeBoard.mode == MazeBoard.MODE.TURN) {
+                mazeBoard.freeField.getCard().turnRight();
+                gui.reDrawBoard();
+                return;
+            }
         }
         
-        mazeBoard.freeField.col = x;
-        mazeBoard.freeField.row = y;
-        mazeBoard.shift(mazeBoard.freeField);
-        gui.reDrawBoard();
+        //player tries to shift fields in the board
+        if (mazeBoard.mode == MazeBoard.MODE.TURN) {
+            mazeBoard.freeField.col = x;
+            mazeBoard.freeField.row = y;
+            System.out.println("try shift");
+            if (mazeBoard.shift(mazeBoard.freeField)) {
+                gui.reDrawBoard();
+                mazeBoard.mode = MazeBoard.MODE.MOVE;
+                return;
+            }
+        }
+        
+        //player tries to move to neighboring field
+        if (mazeBoard.mode == MazeBoard.MODE.MOVE) {
+            xDif = x - Player.players[Player.activePos].x;
+            yDif = y - Player.players[Player.activePos].y;
+ 
+            //try to move to upper field
+            if (xDif == 0 && yDif == -1) {
+                if (mazeBoard.board[y][x].mazeCard.canGo(MazeCard.CANGO.DOWN) &&
+                        mazeBoard.board[Player.players[Player.activePos].y]
+                                       [Player.players[Player.activePos].x].mazeCard.canGo(MazeCard.CANGO.UP)) {
+                    Player.players[Player.activePos].x = x;
+                    Player.players[Player.activePos].y = y;
+                    gui.reDrawBoard();
+                }
+            }
+            
+            //try to move to lower field
+            if (xDif == 0 && yDif == 1) {
+                if (mazeBoard.board[y][x].mazeCard.canGo(MazeCard.CANGO.UP) &&
+                        mazeBoard.board[Player.players[Player.activePos].y]
+                                       [Player.players[Player.activePos].x].mazeCard.canGo(MazeCard.CANGO.DOWN)) {
+                    Player.players[Player.activePos].x = x;
+                    Player.players[Player.activePos].y = y;
+                    gui.reDrawBoard();
+                }
+            }
+            
+            //try to move to right field
+            if (xDif == 1 && yDif == 0) {
+                if (mazeBoard.board[y][x].mazeCard.canGo(MazeCard.CANGO.LEFT) &&
+                        mazeBoard.board[Player.players[Player.activePos].y]
+                                       [Player.players[Player.activePos].x].mazeCard.canGo(MazeCard.CANGO.RIGHT)) {
+                    Player.players[Player.activePos].x = x;
+                    Player.players[Player.activePos].y = y;
+                    gui.reDrawBoard();
+                }
+            }
+            
+            //try to move to left field
+            if (xDif == -1 && yDif == 0) {
+                if (mazeBoard.board[y][x].mazeCard.canGo(MazeCard.CANGO.RIGHT) &&
+                        mazeBoard.board[Player.players[Player.activePos].y]
+                                       [Player.players[Player.activePos].x].mazeCard.canGo(MazeCard.CANGO.LEFT)) {
+                    Player.players[Player.activePos].x = x;
+                    Player.players[Player.activePos].y = y;
+                    gui.reDrawBoard();
+                }
+            }
+            
+            if (mazeBoard.board[Player.players[Player.activePos].y]
+                               [Player.players[Player.activePos].x].
+                                getCard().getTreasureCard() != null) {
+                
+                if (mazeBoard.board[Player.players[Player.activePos].y]
+                        [Player.players[Player.activePos].x].
+                        getCard().treasureCard.equals
+                                           (Player.players[Player.activePos].treasureCard)) {
+                    //increment player's score
+                    Player.players[Player.activePos].score++;
+                    
+                    //remove treasure card from the field
+                    mazeBoard.board[Player.players[Player.activePos].y]
+                            [Player.players[Player.activePos].x].mazeCard.removeTreasureCard();
+                    
+                    //get new player's treasure card
+                    Player.players[Player.activePos].treasureCard = Labyrinth.pack.popCard();
+                    
+                    //in case of winner
+                    if(Player.players[Player.activePos].score == cardPackSize / 2) {
+                        WinnerF winnerF = new WinnerF(Player.players[Player.activePos].name);
+                        gui.setEnabled(false);
+                        winnerF.setVisible(true);
+                    }
+                    gui.reDrawBoard();
+                }
+            }
+        }
     }
 }

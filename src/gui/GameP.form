@@ -375,7 +375,7 @@
                 <Property name="useNullLayout" type="boolean" value="false"/>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="actualPlayer">
+                <Component class="javax.swing.JLabel" name="currentPlayer">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Player1:"/>
                   </Properties>

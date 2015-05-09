@@ -274,6 +274,7 @@ public class MenuP extends javax.swing.JPanel {
         //create board
         Labyrinth.mazeBoard = MazeBoard.createMazeBoard(Labyrinth.boardSize);
         Labyrinth.mazeBoard.newGame();
+        Labyrinth.mazeBoard.setMode(MazeBoard.MODE.TURN);
         
         //create new card pack for players
         Labyrinth.pack = new CardPack(Labyrinth.cardPackSize, Labyrinth.cardPackSize);

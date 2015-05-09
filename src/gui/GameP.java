@@ -5,6 +5,7 @@
  */
 package gui;
 
+import board.MazeBoard;
 import labyrinth.Labyrinth;
 import java.awt.*;
 import java.rmi.server.LoaderHandler;
@@ -106,7 +107,7 @@ public class GameP extends javax.swing.JPanel {
         P4pictureL1 = new javax.swing.JLabel();
         controlP = new javax.swing.JPanel();
         playerTreasureP = new javax.swing.JPanel();
-        actualPlayer = new javax.swing.JLabel();
+        currentPlayer = new javax.swing.JLabel();
         playerCard = new javax.swing.JLabel();
         nextB = new javax.swing.JButton();
 
@@ -300,8 +301,8 @@ public class GameP extends javax.swing.JPanel {
         playerTreasureP.setPreferredSize(new java.awt.Dimension(90, 100));
         playerTreasureP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        actualPlayer.setText("Player1:");
-        playerTreasureP.add(actualPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 20));
+        currentPlayer.setText("Player1:");
+        playerTreasureP.add(currentPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 20));
 
         playerCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/s1.png"))); // NOI18N
         playerTreasureP.add(playerCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 50, 50));
@@ -322,7 +323,9 @@ public class GameP extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBActionPerformed
-        // TODO add your handling code here:
+        Player.nextPlayer();
+        Labyrinth.mazeBoard.setMode(MazeBoard.MODE.TURN);
+        Labyrinth.gui.reDrawBoard();
     }//GEN-LAST:event_nextBActionPerformed
 
 
@@ -339,6 +342,24 @@ public class GameP extends javax.swing.JPanel {
         controlP.add(new FieldP());
         
         playerCard.setIcon(FieldP.getTreasureIcon(Player.players[Player.activePos].treasureCard));
+        
+        //display players' score
+        for (int n = 0; n < Labyrinth.numbeOfPlayers; n++) {
+            if (n == 0)
+                P1scoreCounterL.setText(String.valueOf(Player.players[0].score));
+            
+            if (n == 1)
+                P2scoreCounterL.setText(String.valueOf(Player.players[1].score));
+            
+            if (n == 2)
+                P3scoreCounterL.setText(String.valueOf(Player.players[2].score));
+            
+            if (n == 3)
+                P4scoreCounterL.setText(String.valueOf(Player.players[3].score));
+        }
+        
+        currentPlayer.setText(Player.players[Player.activePos].name);
+        
         invalidate();
         revalidate();
         repaint();
@@ -366,9 +387,9 @@ public class GameP extends javax.swing.JPanel {
     private javax.swing.JPanel Player3JP;
     private javax.swing.JPanel Player4JP;
     private javax.swing.JLayeredPane PlayersLP;
-    private javax.swing.JLabel actualPlayer;
     private javax.swing.JPanel board;
     private javax.swing.JPanel controlP;
+    private javax.swing.JLabel currentPlayer;
     private javax.swing.JButton nextB;
     private javax.swing.JLabel playerCard;
     private javax.swing.JPanel playerTreasureP;

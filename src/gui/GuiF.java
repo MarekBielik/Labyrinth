@@ -35,6 +35,7 @@ public class GuiF extends javax.swing.JFrame {
     
     public void reDrawBoard() {
         board.setVisible(false);
+        board.removeAll();
         board = new GameP();
         this.add(board);
     }
@@ -158,7 +159,7 @@ public class GuiF extends javax.swing.JFrame {
 
     private void ExitGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitGameMIActionPerformed
         // TODO add your handling code here:
-        System.exit(42);
+        System.exit(0);
     }//GEN-LAST:event_ExitGameMIActionPerformed
 
     private void SaveGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveGameMIActionPerformed

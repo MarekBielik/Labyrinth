@@ -15,6 +15,12 @@ import treasure.TreasureCard;
  * @author marek
  */
 public class Player {
+    
+       /**
+        * player's name
+        */
+       public String name;  
+    
        /**
         * horizontal position of player
         */
@@ -73,19 +79,23 @@ public class Player {
                case 0:
                    x = 1;
                    y = 1;
+                   name = "Player1:";
                    break;
                    
                case 1:
-                   x = 1;
+                   x = Labyrinth.boardSize;
                    y = Labyrinth.boardSize;
+                   name = "Player2:";
                    break;
                case 2:
                    x = Labyrinth.boardSize;
                    y = 1;
+                   name = "Player3:";
                    break;
                case 3:
-                   x = Labyrinth.boardSize;
+                   x = 1;
                    y = Labyrinth.boardSize;
+                   name = "Player4:";
                    break; 
            }
            
