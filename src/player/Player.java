@@ -76,8 +76,8 @@ public class Player {
                    break;
                    
                case 1:
-                   x = Labyrinth.boardSize;
-                   y = Labyrinth.boardSize;
+                   x = 2;
+                   y = 2;
                    break;
                case 2:
                    x = 2;
