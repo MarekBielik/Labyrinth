@@ -282,6 +282,9 @@ public class MenuP extends javax.swing.JPanel {
         
         Player.createPlayers();
         
+        //store initial state
+        Labyrinth.saveMove();
+        
         Labyrinth.gui.hideMenu();
         Labyrinth.gui.displayBoard();      
     }//GEN-LAST:event_newGameRBActionPerformed

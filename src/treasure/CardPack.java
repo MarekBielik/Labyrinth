@@ -1,11 +1,12 @@
 package treasure;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
  * @author xbieli05
  */
-public class CardPack {
+public class CardPack implements Serializable{
     /**
      * @param pack a pack of cards
      */

@@ -3,10 +3,11 @@ package board;
 import java.util.Random;
 
 import static board.MazeCard.CANGO.*;
+import java.io.Serializable;
 import labyrinth.Labyrinth;
 
 
-public class MazeBoard {
+public class MazeBoard implements Serializable{
 
     /**
      * game mode

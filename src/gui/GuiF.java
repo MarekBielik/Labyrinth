@@ -8,6 +8,7 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import labyrinth.Labyrinth;
 
 /**
  *
@@ -171,6 +172,8 @@ public class GuiF extends javax.swing.JFrame {
     private void UndoMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UndoMIActionPerformed
         // TODO add your handling code here:
         System.out.println("Undo");
+        Labyrinth.restoreMove();
+        reDrawBoard();
     }//GEN-LAST:event_UndoMIActionPerformed
 
 

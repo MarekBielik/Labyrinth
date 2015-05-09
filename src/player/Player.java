@@ -5,6 +5,7 @@
  */
 package player;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import labyrinth.Labyrinth;
@@ -14,7 +15,7 @@ import treasure.TreasureCard;
  *
  * @author marek
  */
-public class Player {
+public class Player implements Serializable{
     
        /**
         * player's name

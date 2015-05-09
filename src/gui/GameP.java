@@ -325,6 +325,7 @@ public class GameP extends javax.swing.JPanel {
     private void nextBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBActionPerformed
         Player.nextPlayer();
         Labyrinth.mazeBoard.setMode(MazeBoard.MODE.TURN);
+        Labyrinth.saveMove();
         Labyrinth.gui.reDrawBoard();
     }//GEN-LAST:event_nextBActionPerformed
 

@@ -4,10 +4,17 @@ import board.*;
 import gui.GuiF;
 import gui.WinnerF;
 import java.awt.Image;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Stack;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import player.Player;
+import player.*;
 import treasure.CardPack;
 import treasure.Treasure;
 
@@ -22,6 +29,7 @@ public class Labyrinth {
     public static int cardPackSize = 12;
     public static MazeBoard mazeBoard;
     public static CardPack pack;
+    public static Stack<byte[]> moveStack = new Stack();  
     
     public static Image iUD;
     public static Image iLR;
@@ -383,5 +391,54 @@ public class Labyrinth {
                 }
             }
         }
+    }
+    
+    /**
+     * saves current state of game
+     */
+    public static void saveMove() {
+        System.err.println("game saved");
+        GameState gameState = new GameState(true);
+        
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(bos);
+        } catch (Exception e) {
+        }
+        
+        try {
+            oos.writeObject(gameState);
+            oos.flush();
+            oos.close();
+            bos.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Labyrinth.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        byte[] byteData = bos.toByteArray();
+        moveStack.push(byteData);
+    }
+    
+    /**
+     * restores previous state of game
+     */
+    public static void restoreMove() {
+        if (moveStack.empty())
+            return;
+        
+        GameState gameState = new GameState(false);
+        
+        ByteArrayInputStream bais = new ByteArrayInputStream(moveStack.pop());
+        try {
+            gameState = (GameState) new ObjectInputStream(bais).readObject();
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(Labyrinth.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        mazeBoard = gameState.mazeBoard;
+        pack = gameState.cardPack;
+        Player.players = gameState.players;
+        Player.activePos = gameState.activePos;
     }
 }

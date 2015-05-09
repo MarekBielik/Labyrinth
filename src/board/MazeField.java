@@ -1,8 +1,9 @@
 package board;
 
+import java.io.Serializable;
 import treasure.TreasureCard;
 
-public class MazeField {
+public class MazeField implements Serializable {
 
     public int row, col;
     public MazeCard mazeCard;

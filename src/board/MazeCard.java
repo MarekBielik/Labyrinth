@@ -4,9 +4,10 @@ import java.util.*;
 import java.lang.*;
 
 import static board.MazeCard.CANGO.*;
+import java.io.Serializable;
 import treasure.TreasureCard;
 
-public class MazeCard {
+public class MazeCard implements Serializable {
 
     public enum CANGO {
         LEFT,

@@ -1,9 +1,11 @@
 package treasure;
 
+import java.io.Serializable;
+
 /**
  * @author xbieli05
  */
-public class TreasureCard {
+public class TreasureCard implements Serializable {
 
     public Treasure treasure;
     
