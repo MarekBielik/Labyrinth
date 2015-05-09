@@ -37,4 +37,11 @@ public class MazeField {
         this.treasureCard = treasureCard;
     }
 
+    public TreasureCard popTreasureCard() {
+       /* TreasureCard treasureCard = new TreasureCard(this.treasureCard.treasure);
+        this.treasureCard = null;*/
+        TreasureCard treasureCard = this.treasureCard;
+        this.treasureCard = null;
+        return treasureCard;
+    }
 }

@@ -81,11 +81,11 @@ public class Player {
                    break;
                case 2:
                    x = 2;
-                   y = 1;
+                   y = 2;
                    break;
                case 3:
                    x = 2;
-                   y = 3;
+                   y = 2;
                    break; 
            }
            

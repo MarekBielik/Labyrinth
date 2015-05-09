@@ -208,7 +208,7 @@ public class MazeBoard {
             int p4 = 0;
 
             for (r = 1; r < board.length; r++) /* pro vsechny radky */
-            for (int n = 0; n <= Labyrinth.numbeOfPlayers; n++) { /* pro vsechny hrace */
+            for (int n = 0; n < Labyrinth.numbeOfPlayers; n++) { /* pro vsechny hrace */
             if (n == 0 && player.Player.isPlayerOnField(n, c, r)) 
             {
                 if (player.Player.isPlayerOnField(n, c, board.length-1)) /* je-li hrac na poslednim policku */
@@ -311,7 +311,7 @@ public class MazeBoard {
             int p4 = 0;
 
             for (c = 1; c < board.length; c++)
-            for (int n = 0; n <= Labyrinth.numbeOfPlayers; n++) {
+            for (int n = 0; n < Labyrinth.numbeOfPlayers; n++) {
             if (n == 0 && player.Player.isPlayerOnField(n, c, r)) 
             {
                 if (player.Player.isPlayerOnField(n, board.length-1, r))
@@ -419,7 +419,7 @@ public class MazeBoard {
             int p4 = 0;
 
             for (r = board.length-1; r > 0; r--)
-            for (int n = 0; n <= Labyrinth.numbeOfPlayers; n++) {
+            for (int n = 0; n < Labyrinth.numbeOfPlayers; n++) {
             if (n == 0 && player.Player.isPlayerOnField(n, c, r)) 
             {
                 if (player.Player.isPlayerOnField(n, c, 1))
@@ -521,7 +521,7 @@ public class MazeBoard {
             int p4 = 0;
 
             for (c = board.length-1; c > 0; c--)
-            for (int n = 0; n <= Labyrinth.numbeOfPlayers; n++) {
+            for (int n = 0; n < Labyrinth.numbeOfPlayers; n++) {
             if (n == 0 && player.Player.isPlayerOnField(n, c, r)) 
             {
                 if (player.Player.isPlayerOnField(n, 1, r))
