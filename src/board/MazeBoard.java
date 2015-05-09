@@ -339,7 +339,7 @@ public class MazeBoard {
                 {
                     if (p2 == 0)
                     {
-                        player.Player.players[n].x = c+1;
+                        player.Player.players[n].x = 1;
                         player.Player.players[n].y = r;
                         p2++;
                     }
@@ -586,20 +586,20 @@ public class MazeBoard {
             
             if (n == 3 && player.Player.isPlayerOnField(n, c, r))
             {   
-                if (player.Player.isPlayerOnField(n, c, 1))
+                if (player.Player.isPlayerOnField(n, 1, r))
                 {
                     if (p4 == 0)
                     {
-                        player.Player.players[n].y = board.length-1;
-                        player.Player.players[n].x = c;
+                        player.Player.players[n].x = board.length-1;
+                        player.Player.players[n].y = r;
                         p4++;
                     }
                 }                
                 
                 if (p4 == 0)
                 {
-                player.Player.players[n].y = r-1;
-                player.Player.players[n].x = c;  
+                player.Player.players[n].x = c-1;
+                player.Player.players[n].y = r;  
                 p4++;
                 }
             }
