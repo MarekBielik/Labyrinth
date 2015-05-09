@@ -170,27 +170,133 @@ public class MazeBoard {
     public MazeCard getFreeCard() {
         return freeField.getCard();
     }
-
+    
+/**
+ * Shift: posune policka
+ * @param mf 
+ */
     public void shift(MazeField mf) {
         int c = mf.col();
         int r = mf.row();
         MazeCard tmpFreeCard;
         int lastIndex = board.length - 1;
-
+        
+        
         if(r > lastIndex || c > lastIndex)
             return;
-
+        
+        
+        /* ↓ */
         if (r == 1 && c % 2 == 0) {
+            System.out.println("↓");
+
+                       
+            
             tmpFreeCard = board[lastIndex][c].getCard();
 
             for (int i = lastIndex; i > 1;)
+            {
                 board[i][c].putCard(board[--i][c].getCard());
-
+            }
             board[1][c].putCard(freeField.getCard());
             freeField.putCard(tmpFreeCard);
-        }
+            
+            /* priznak, abych posunuk hrace jen o jedno policko v nasledujici podmince */
+            int p1 = 0;
+            int p2 = 0;
+            int p3 = 0;
+            int p4 = 0;
 
+            for (r = 1; r < board.length; r++) /* pro vsechny radky */
+            for (int n = 0; n <= Labyrinth.numbeOfPlayers; n++) { /* pro vsechny hrace */
+            if (n == 0 && player.Player.isPlayerOnField(n, c, r)) 
+            {
+                if (player.Player.isPlayerOnField(n, c, board.length-1)) /* je-li hrac na poslednim policku */
+                {
+                    if (p1 == 0)
+                    {
+                        player.Player.players[n].y = 1; /* tak ho dam na prvni */
+                        player.Player.players[n].x = c;
+                        p1++;
+                    }
+                }
+                
+                if (p1 == 0)
+                {
+                player.Player.players[n].y = r+1; /* jinak ho o 1 posunu */
+                player.Player.players[n].x = c;
+                p1++;
+                }
+            }
+            /* to stejne pro dalsi hrace ... i dalsi smery */
+            if (n == 1 && player.Player.isPlayerOnField(n, c, r))
+            {
+                
+                if (player.Player.isPlayerOnField(n, c, board.length-1))
+                {
+                    if (p2 == 0)
+                    {
+                        player.Player.players[n].y = 1;
+                        player.Player.players[n].x = c;
+                        p2++;
+                    }
+                }
+                
+                if (p2 == 0)
+                {
+                player.Player.players[n].y = r+1;
+                player.Player.players[n].x = c;
+                p2++;
+                }
+            }
+            
+            if (n == 2 && player.Player.isPlayerOnField(n ,c, r))
+            {
+                
+                if (player.Player.isPlayerOnField(n, c, board.length-1))
+                {
+                    if (p3 == 0)
+                    {
+                        player.Player.players[n].y = 1;
+                        player.Player.players[n].x = c;
+                        p3++;
+                    }
+                }
+                
+                if (p3 == 0)
+                {
+                player.Player.players[n].y = r+1;
+                player.Player.players[n].x = c;
+                p3++;
+                }
+            }
+            
+            if (n == 3 && player.Player.isPlayerOnField(n, c, r))
+            {   
+                if (player.Player.isPlayerOnField(n, c, board.length-1))
+                {
+                    if (p4 == 0)
+                    {
+                        player.Player.players[n].y = 1;
+                        player.Player.players[n].x = c;
+                        p4++;
+                    }
+                }                
+                
+                if (p4 == 0)
+                {
+                player.Player.players[n].y = r+1;
+                player.Player.players[n].x = c;  
+                p4++;
+                }
+            }
+            }
+            
+            
+        }
+        /* → */
         else if (r % 2 == 0 && c == 1) {
+            System.out.println("→");
             tmpFreeCard = board[r][lastIndex].getCard();
 
             for (int i = lastIndex; i > 1;)
@@ -198,9 +304,106 @@ public class MazeBoard {
 
             board[r][1].putCard(freeField.getCard());
             freeField.putCard(tmpFreeCard);
-        }
+            
+            int p1 = 0;
+            int p2 = 0;
+            int p3 = 0;
+            int p4 = 0;
 
-        else if (r == lastIndex && c % 2 == 0) {
+            for (c = 1; c < board.length; c++)
+            for (int n = 0; n <= Labyrinth.numbeOfPlayers; n++) {
+            if (n == 0 && player.Player.isPlayerOnField(n, c, r)) 
+            {
+                if (player.Player.isPlayerOnField(n, board.length-1, r))
+                {
+                    if (p1 == 0)
+                    {
+                        player.Player.players[n].x = 1;
+                        player.Player.players[n].y = r;
+                        p1++;
+                    }
+                }
+                
+                if (p1 == 0)
+                {
+                player.Player.players[n].x = c+1;
+                player.Player.players[n].y = r;
+                p1++;
+                }
+            }
+            
+            if (n == 1 && player.Player.isPlayerOnField(n, c, r))
+            {
+                
+                if (player.Player.isPlayerOnField(n, board.length-1, r))
+                {
+                    if (p2 == 0)
+                    {
+                        player.Player.players[n].x = c+1;
+                        player.Player.players[n].y = r;
+                        p2++;
+                    }
+                }
+                
+                if (p2 == 0)
+                {
+                player.Player.players[n].x = c+1;
+                player.Player.players[n].y = r;
+                p2++;
+                }
+            }
+            
+            if (n == 2 && player.Player.isPlayerOnField(n ,c, r))
+            {
+                
+                if (player.Player.isPlayerOnField(n, board.length-1, r))
+                {
+                    if (p3 == 0)
+                    {
+                        player.Player.players[n].x = 1;
+                        player.Player.players[n].y = r;
+                        p3++;
+                    }
+                }
+                
+                if (p3 == 0)
+                {
+                player.Player.players[n].x = c+1;
+                player.Player.players[n].y = r;
+                p3++;
+                }
+            }
+            
+            if (n == 3 && player.Player.isPlayerOnField(n, c, r))
+            {   
+                if (player.Player.isPlayerOnField(n, board.length-1, r))
+                {
+                    if (p4 == 0)
+                    {
+                        player.Player.players[n].x = 1;
+                        player.Player.players[n].y = r;
+                        p4++;
+                    }
+                }                
+                
+                if (p4 == 0)
+                {
+                player.Player.players[n].x = c+1;
+                player.Player.players[n].y = r;  
+                p4++;
+                }
+            }
+            }
+            
+            
+            
+        }
+        /* ↑ */
+        else    
+        if (r == lastIndex && c % 2 == 0) {
+            System.out.println("↑");
+            
+            
             tmpFreeCard = board[1][c].getCard();
 
             for (int i = 1; i < lastIndex;)
@@ -208,9 +411,101 @@ public class MazeBoard {
 
             board[lastIndex][c].putCard(freeField.getCard());
             freeField.putCard(tmpFreeCard);
-        }
+            
+            
+            int p1 = 0;
+            int p2 = 0;
+            int p3 = 0;
+            int p4 = 0;
 
+            for (r = board.length-1; r > 0; r--)
+            for (int n = 0; n <= Labyrinth.numbeOfPlayers; n++) {
+            if (n == 0 && player.Player.isPlayerOnField(n, c, r)) 
+            {
+                if (player.Player.isPlayerOnField(n, c, 1))
+                {
+                    if (p1 == 0)
+                    {
+                        player.Player.players[n].y = board.length-1;
+                        player.Player.players[n].x = c;
+                        p1++;
+                    }
+                }
+                
+                if (p1 == 0)
+                {
+                player.Player.players[n].y = r-1;
+                player.Player.players[n].x = c;
+                p1++;
+                }
+            }
+            
+            if (n == 1 && player.Player.isPlayerOnField(n, c, r))
+            {
+                
+                if (player.Player.isPlayerOnField(n, c, 1))
+                {
+                    if (p2 == 0)
+                    {
+                        player.Player.players[n].y = board.length-1;
+                        player.Player.players[n].x = c;
+                        p2++;
+                    }
+                }
+                
+                if (p2 == 0)
+                {
+                player.Player.players[n].y = r-1;
+                player.Player.players[n].x = c;
+                p2++;
+                }
+            }
+            
+            if (n == 2 && player.Player.isPlayerOnField(n ,c, r))
+            {
+                
+                if (player.Player.isPlayerOnField(n, c, 1))
+                {
+                    if (p3 == 0)
+                    {
+                        player.Player.players[n].y = board.length-1;
+                        player.Player.players[n].x = c;
+                        p3++;
+                    }
+                }
+                
+                if (p3 == 0)
+                {
+                player.Player.players[n].y = r-1;
+                player.Player.players[n].x = c;
+                p3++;
+                }
+            }
+            
+            if (n == 3 && player.Player.isPlayerOnField(n, c, r))
+            {   
+                if (player.Player.isPlayerOnField(n, c, 1))
+                {
+                    if (p4 == 0)
+                    {
+                        player.Player.players[n].y = board.length-1;
+                        player.Player.players[n].x = c;
+                        p4++;
+                    }
+                }                
+                
+                if (p4 == 0)
+                {
+                player.Player.players[n].y = r-1;
+                player.Player.players[n].x = c;  
+                p4++;
+                }
+            }
+            }
+        }
+        /* ← */
         else if (r % 2 == 0 && c == lastIndex) {
+            System.out.println("←");
             tmpFreeCard = board[r][1].getCard();
 
             for (int i = 1; i < lastIndex;)
@@ -218,6 +513,97 @@ public class MazeBoard {
 
             board[r][lastIndex].putCard(freeField.getCard());
             freeField.putCard(tmpFreeCard);
+            
+            
+            int p1 = 0;
+            int p2 = 0;
+            int p3 = 0;
+            int p4 = 0;
+
+            for (c = board.length-1; c > 0; c--)
+            for (int n = 0; n <= Labyrinth.numbeOfPlayers; n++) {
+            if (n == 0 && player.Player.isPlayerOnField(n, c, r)) 
+            {
+                if (player.Player.isPlayerOnField(n, 1, r))
+                {
+                    if (p1 == 0)
+                    {
+                        player.Player.players[n].x = board.length-1;
+                        player.Player.players[n].y = r;
+                        p1++;
+                    }
+                }
+                
+                if (p1 == 0)
+                {
+                player.Player.players[n].x = c-1;
+                player.Player.players[n].y = r;
+                p1++;
+                }
+            }
+            
+            if (n == 1 && player.Player.isPlayerOnField(n, c, r))
+            {
+                
+                if (player.Player.isPlayerOnField(n, 1, r))
+                {
+                    if (p2 == 0)
+                    {
+                        player.Player.players[n].x = board.length-1;
+                        player.Player.players[n].y = r;
+                        p2++;
+                    }
+                }
+                
+                if (p2 == 0)
+                {
+                player.Player.players[n].x = c-1;
+                player.Player.players[n].y = r;
+                p2++;
+                }
+            }
+            
+            if (n == 2 && player.Player.isPlayerOnField(n ,c, r))
+            {
+                
+                if (player.Player.isPlayerOnField(n, 1, r))
+                {
+                    if (p3 == 0)
+                    {
+                        player.Player.players[n].x = board.length-1;
+                        player.Player.players[n].y = r;
+                        p3++;
+                    }
+                }
+                
+                if (p3 == 0)
+                {
+                player.Player.players[n].x = c-1;
+                player.Player.players[n].y = r;
+                p3++;
+                }
+            }
+            
+            if (n == 3 && player.Player.isPlayerOnField(n, c, r))
+            {   
+                if (player.Player.isPlayerOnField(n, c, 1))
+                {
+                    if (p4 == 0)
+                    {
+                        player.Player.players[n].y = board.length-1;
+                        player.Player.players[n].x = c;
+                        p4++;
+                    }
+                }                
+                
+                if (p4 == 0)
+                {
+                player.Player.players[n].y = r-1;
+                player.Player.players[n].x = c;  
+                p4++;
+                }
+            }
+            }
         }
     }
 

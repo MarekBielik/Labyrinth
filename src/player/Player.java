@@ -72,7 +72,7 @@ public class Player {
            switch(n) {
                case 0:
                    x = 2;
-                   y = 1;
+                   y = 2;
                    break;
                    
                case 1:
@@ -80,12 +80,12 @@ public class Player {
                    y = Labyrinth.boardSize;
                    break;
                case 2:
-                   x = Labyrinth.boardSize;
+                   x = 2;
                    y = 1;
                    break;
                case 3:
-                   x = 1;
-                   y = Labyrinth.boardSize;
+                   x = 2;
+                   y = 3;
                    break; 
            }
            
