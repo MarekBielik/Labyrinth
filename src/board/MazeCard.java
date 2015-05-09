@@ -4,6 +4,7 @@ import java.util.*;
 import java.lang.*;
 
 import static board.MazeCard.CANGO.*;
+import treasure.TreasureCard;
 
 public class MazeCard {
 
@@ -13,9 +14,30 @@ public class MazeCard {
         RIGHT,
         DOWN
     }
-
+    
+    /**
+     * treasure card stored on this mazecard
+     */
+    public TreasureCard treasureCard;
+    
+    /**
+     * ways stored in card
+     */
      List<CANGO> ways;
+     
+     
+    public TreasureCard getTreasureCard() {
+        return treasureCard;
+    }
+    
+    public void putTreasureCard (TreasureCard treasureCard) {
+        this.treasureCard = treasureCard;
+    }     
 
+    public void removeTreasureCard () {
+        this.treasureCard = null;
+    }
+    
     protected MazeCard(CANGO... ways) {
         this.ways = new Vector<>();
 

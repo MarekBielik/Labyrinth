@@ -32,7 +32,7 @@ public class FieldP extends javax.swing.JPanel {
         setWay(c, r);
         
         //get free field
-        treasureCard = Labyrinth.mazeBoard.freeField.getTreasureCard();
+        treasureCard = Labyrinth.mazeBoard.freeField.mazeCard.getTreasureCard();
         
         if (treasureCard == null)  //in case of field without treasure card
             treasureL.setIcon(null);
@@ -57,7 +57,7 @@ public class FieldP extends javax.swing.JPanel {
         
         setWay(r, c);
         
-        treasureCard = Labyrinth.mazeBoard.board[r][c].getTreasureCard();
+        treasureCard = Labyrinth.mazeBoard.board[r][c].mazeCard.getTreasureCard();
         
         if (treasureCard == null)  //in case of field without treasure card
             treasureL.setIcon(null);

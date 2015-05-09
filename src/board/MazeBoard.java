@@ -4,6 +4,7 @@ import java.util.Random;
 
 import static board.MazeCard.CANGO.*;
 import labyrinth.Labyrinth;
+import treasure.TreasureCard;
 
 public class MazeBoard {
 
@@ -149,9 +150,9 @@ public class MazeBoard {
             else
             if (x == board.length-1 && y == board.length-1) ;
             else
-            if ((board[x][y].getTreasureCard() == null))
+            if ((board[x][y].mazeCard.getTreasureCard() == null))
             {
-                board[x][y].putTreasureCard(Labyrinth.pack.popCard());
+                board[x][y].mazeCard.putTreasureCard(Labyrinth.pack.popCard());
             }
         }
         
@@ -190,8 +191,6 @@ public class MazeBoard {
         if (r == 1 && c % 2 == 0) {
             System.out.println("↓");
 
-                       
-            
             tmpFreeCard = board[lastIndex][c].getCard();
 
             for (int i = lastIndex; i > 1;)
@@ -339,7 +338,7 @@ public class MazeBoard {
                 {
                     if (p2 == 0)
                     {
-                        player.Player.players[n].x = c+1;
+                        player.Player.players[n].x = 1;
                         player.Player.players[n].y = r;
                         p2++;
                     }
@@ -586,20 +585,20 @@ public class MazeBoard {
             
             if (n == 3 && player.Player.isPlayerOnField(n, c, r))
             {   
-                if (player.Player.isPlayerOnField(n, c, 1))
+                if (player.Player.isPlayerOnField(n, 1, r))
                 {
                     if (p4 == 0)
                     {
-                        player.Player.players[n].y = board.length-1;
-                        player.Player.players[n].x = c;
+                        player.Player.players[n].x = board.length-1;
+                        player.Player.players[n].y = r;
                         p4++;
                     }
                 }                
                 
                 if (p4 == 0)
                 {
-                player.Player.players[n].y = r-1;
-                player.Player.players[n].x = c;  
+                player.Player.players[n].x = c-1;
+                player.Player.players[n].y = r;  
                 p4++;
                 }
             }
