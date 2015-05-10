@@ -1,3 +1,11 @@
+/**
+ * Labyrinth
+ * 
+ * Autoři:
+ * xbieli05
+ * xmatus29
+ */
+
 package labyrinth;
 
 import board.*;

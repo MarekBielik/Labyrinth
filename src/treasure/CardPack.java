@@ -1,3 +1,11 @@
+/**
+ * Card Pack
+ * 
+ * Autoři:
+ * xbieli05
+ * xmatus29
+ */
+
 package treasure;
 
 import java.io.Serializable;

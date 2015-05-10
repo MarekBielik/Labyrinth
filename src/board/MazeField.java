@@ -1,3 +1,11 @@
+/**
+ * Maze Field
+ * 
+ * Autoři:
+ * xbieli05
+ * xmatus29
+ */
+
 package board;
 
 import java.io.Serializable;
