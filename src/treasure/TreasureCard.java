@@ -3,6 +3,7 @@ package treasure;
 import java.io.Serializable;
 
 /**
+ * Reprezentuje jednu hrací kartu. Karta zobrazuje poklad(instanci třídy Treasure)
  * @author xbieli05
  */
 public class TreasureCard implements Serializable {

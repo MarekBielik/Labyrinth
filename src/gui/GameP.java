@@ -19,7 +19,7 @@ import javax.swing.JLayeredPane;
 import player.Player;
 
 /**
- *
+ * Hra.
  * @author marek
  */
 public class GameP extends javax.swing.JPanel {
@@ -329,7 +329,9 @@ public class GameP extends javax.swing.JPanel {
         Labyrinth.gui.reDrawBoard();
     }//GEN-LAST:event_nextBActionPerformed
 
-
+    /**
+     * Vytiskne hrací desku.
+     */
     public void printBoard() {
         invalidate();
         revalidate();

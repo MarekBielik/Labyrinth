@@ -12,7 +12,7 @@ import labyrinth.Labyrinth;
 import treasure.TreasureCard;
 
 /**
- *
+ * Reprezentuje hráče.
  * @author marek
  */
 public class Player implements Serializable{
