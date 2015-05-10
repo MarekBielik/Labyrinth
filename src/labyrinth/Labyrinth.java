@@ -433,14 +433,15 @@ public class Labyrinth {
         try {
             gameState = (GameState) new ObjectInputStream(bais).readObject();
         } catch (IOException | ClassNotFoundException ex) {
-            Logger.getLogger(Labyrinth.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("wrong file");
         }
         
         mazeBoard = gameState.mazeBoard;
         pack = gameState.cardPack;
         Player.players = gameState.players;
         Player.activePos = gameState.activePos;
-        
+        numbeOfPlayers = gameState.numberOfPlayers;
+        boardSize = gameState.boardSize;
         gui.reDrawBoard();
     }
 }

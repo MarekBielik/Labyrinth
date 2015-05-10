@@ -155,9 +155,9 @@ public class GuiF extends javax.swing.JFrame {
         JFileChooser loadGameF = new JFileChooser();
         loadGameF.setVisible(true);
         
-        int result = loadGameF.showSaveDialog(loadGameF);
+        int result = loadGameF.showOpenDialog(loadGameF);
+        
         if (result == JFileChooser.APPROVE_OPTION) {
-            System.err.println("load");
             this.setEnabled(true);
             loadGameF.setVisible(false);
             File f = loadGameF.getSelectedFile();
@@ -168,9 +168,10 @@ public class GuiF extends javax.swing.JFrame {
                 streamIn = new FileInputStream(filename);
                 objectinputstream = new ObjectInputStream(streamIn);
                 Labyrinth.moveStack = (Stack<byte[]>) objectinputstream.readObject();
+                Labyrinth.restoreMove();
 
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println("wrong file");
             }finally {
                 if(objectinputstream != null){
                     try {
@@ -180,11 +181,8 @@ public class GuiF extends javax.swing.JFrame {
                     }
                   } 
                 }
-            Labyrinth.restoreMove();
-            
         }
         else if (result == JFileChooser.CANCEL_OPTION) {
-            System.err.println("Cancel was selected");
                 this.setEnabled(true);
                 loadGameF.setVisible(false);
         }

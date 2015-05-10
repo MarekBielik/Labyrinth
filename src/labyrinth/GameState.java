@@ -20,7 +20,9 @@ public class GameState implements Serializable {
     protected MazeBoard mazeBoard;
     protected CardPack cardPack;
     protected Player[] players;
-    protected int activePos = Player.activePos;
+    protected int activePos;
+    protected int numberOfPlayers;
+    protected int boardSize;
     
     public GameState (boolean store) {
         if (store) {
@@ -28,6 +30,8 @@ public class GameState implements Serializable {
             cardPack = Labyrinth.pack;
             players = Player.players;
             activePos = Player.activePos;
+            numberOfPlayers = Labyrinth.numbeOfPlayers;
+            boardSize = Labyrinth.boardSize;
         }
     }
     
