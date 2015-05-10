@@ -7,8 +7,16 @@ import static board.MazeCard.CANGO.*;
 import java.io.Serializable;
 import treasure.TreasureCard;
 
+/**
+ * Reprezentuje jeden kámen, který se umisťuje na políčka hrací plochy.
+ * Kámen uchovává informaci o cestě, tj. směrech, kudy lze kámen opustit.
+ * @author Luboš
+ */
 public class MazeCard implements Serializable {
-
+    /**
+     * Vnořený výčtový typ.
+     * Definuje čtyři hodnoty reprezentující směr, kudy lze opustit kámen.
+     */
     public enum CANGO {
         LEFT,
         UP,
@@ -26,19 +34,28 @@ public class MazeCard implements Serializable {
      */
      List<CANGO> ways;
      
-     
+    /**
+     * Vrátí kartu s pokladem.
+     * @return 
+     */
     public TreasureCard getTreasureCard() {
         return treasureCard;
     }
     
+    /**
+     * Vloží kartu s pokladem.
+     * @param treasureCard 
+     */
     public void putTreasureCard (TreasureCard treasureCard) {
         this.treasureCard = treasureCard;
     }     
-
+    /**
+     * Odstraní kartu s pokladem.
+     */
     public void removeTreasureCard () {
         this.treasureCard = null;
     }
-    
+
     protected MazeCard(CANGO... ways) {
         this.ways = new Vector<>();
 
@@ -54,7 +71,12 @@ public class MazeCard implements Serializable {
         else
             return false;
     }
-
+    /**
+     * Vyzvoří kámen podle zadaného typu (C, L, F).
+     * @param type
+     * @return
+     * @throws IllegalArgumentException 
+     */
     public static MazeCard create (String type) throws IllegalArgumentException {
 
         switch (type) {
@@ -92,7 +114,11 @@ public class MazeCard implements Serializable {
                 throw new IllegalArgumentException();
         }
     }
-
+    /**
+     * Vrací informaci (true or false), zda je možné opustit kámen daným směrem.
+     * @param dir
+     * @return 
+     */
     public boolean canGo(MazeCard.CANGO dir) {
 
         return this.ways.contains(dir);
@@ -116,7 +142,9 @@ public class MazeCard implements Serializable {
                 throw new IllegalArgumentException();
         }
     }
-
+    /**
+     * Otočí kámen o 90 stupňů doprava.
+     */
     public void turnRight() {
         ListIterator<CANGO> i = ways.listIterator();
         CANGO way;

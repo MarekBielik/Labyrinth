@@ -11,7 +11,7 @@ import player.Player;
 import treasure.CardPack;
 
 /**
- *
+ * Reprezentuje stav hry.
  * @author marek
  * Stores one state of the game.
  */

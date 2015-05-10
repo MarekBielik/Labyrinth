@@ -80,7 +80,11 @@ public class FieldP extends javax.swing.JPanel {
         }
         
     }
-    
+    /**
+     * Nastaví směr.
+     * @param c
+     * @param r 
+     */
     protected void setWay(int c, int r) {
        MazeCard card;
        
@@ -122,7 +126,11 @@ public class FieldP extends javax.swing.JPanel {
            wayL.setIcon(new ImageIcon(Labyrinth.tRUD));
        }
     }
-    
+    /**
+     * Vrátí příslušný obrázek.
+     * @param treasureCard
+     * @return 
+     */
     public static ImageIcon getTreasureIcon( TreasureCard treasureCard) {
         
 

@@ -113,7 +113,9 @@ public class Labyrinth {
         });
     }
     
-    
+    /**
+     * Inicializace hry.
+     */
     public static void initGame() {
         initImages();
         Treasure.createSet();

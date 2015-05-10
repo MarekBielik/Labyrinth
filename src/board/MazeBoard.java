@@ -24,16 +24,31 @@ public class MazeBoard implements Serializable{
     public MazeField freeField;
     public MazeField[][] board;
 
+    
+    /**
+     * Nastaveni modu
+     * @param mode 
+     */
     public void setMode (MODE mode) {
         this.mode = mode;
     }
     
+    /**
+     * Vytvoří hrací desku o velikost n.
+     * @param n
+     * @return 
+     */
     public static MazeBoard createMazeBoard(int n) {
 
         return new MazeBoard(n);
 
     }
-
+    
+    /**
+     * Reprezentuje hraci desku. Deska je rozdelena na policka a je ctvercova o rozmeru n.
+     * Umožňuje generovat novou hru a posunovat kameny na řádcích či sloupcích.
+     * @param n 
+     */
     public MazeBoard(int n) {
         board = new MazeField [n+1] [n+1];
 
@@ -43,7 +58,9 @@ public class MazeBoard implements Serializable{
 
         freeField = new MazeField(0, 0);
     }
-
+    /**
+     * Vytvoří novou hru. Generuje hraci kameny a umisťuje je na políčka. Současně vygeneruje jeden volný kámen, který uchová mimo políčka.
+     */
     public void newGame() {
         /* hraci kameny */
 
@@ -179,7 +196,13 @@ public class MazeBoard implements Serializable{
         freeField.putCard(MazeCard.create("F1"));
          
     }
-
+    /**
+     * Provede vložení volného kamene na pozici políčka mf.
+     * Podle pozice políčka mf se provede příslušné posunutí kamenů.
+     * @param r
+     * @param c
+     * @return 
+     */
     public MazeField get(int r, int c) {
         if (r > board.length || c > board.length ||
                 r < 1 || c < 1)
@@ -193,7 +216,8 @@ public class MazeBoard implements Serializable{
     }
     
 /**
- * Shift: posune policka
+ * Provede vložení volného kamene na pozici políčka mf.
+ * Podle pozice políčka mf se provede příslušné posunutí kamenů.
  * @param mf 
  */
     public boolean shift(MazeField mf) {
@@ -202,8 +226,6 @@ public class MazeBoard implements Serializable{
         MazeCard tmpFreeCard;
         int lastIndex = board.length - 1;
         boolean boardShifted = false;
-        //boolean canMove = true;
-        System.out.println(c + "=" + mf.pomC + "a" + r + "=" + mf.pomR);
         if(r > lastIndex || c > lastIndex)
             return boardShifted;
         
@@ -643,7 +665,9 @@ public class MazeBoard implements Serializable{
         
         return boardShifted;
     }
-
+    /**
+     * Vytiskne hrací desku.
+     */
     public void printBoard() {
         System.out.print("  ");
         for (int i = 1; i < board.length; i++)
@@ -662,7 +686,10 @@ public class MazeBoard implements Serializable{
         printField(freeField);
         System.out.print("\n");
     }
-
+    /**
+     * Vytiskne jednotlivá políčka.
+     * @param field 
+     */
     public void printField(MazeField field) {
         MazeCard card = field.getCard();
 

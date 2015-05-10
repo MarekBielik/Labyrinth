@@ -6,7 +6,7 @@
 package gui;
 
 /**
- *
+ * Vitez.
  * @author marek
  */
 public class WinnerF extends javax.swing.JFrame {

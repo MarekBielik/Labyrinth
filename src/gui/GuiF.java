@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 import labyrinth.Labyrinth;
 
 /**
- *
+ * GUI.
  * @author marek
  */
 public class GuiF extends javax.swing.JFrame {
@@ -42,7 +42,9 @@ public class GuiF extends javax.swing.JFrame {
            
         pack();
     }
-    
+    /**
+     * Překreslí hrací desku.
+     */
     public void reDrawBoard() {
         if (board != null) {
             board.setVisible(false);
@@ -57,16 +59,22 @@ public class GuiF extends javax.swing.JFrame {
             this.add(board);
         }
     }
-    
+    /**
+     * Zobraz hrací desku.
+     */
     public void displayBoard() {
         board = new GameP();
         this.add(board);
     }
-    
+    /**
+     * Skryj menu.
+     */
     public void hideMenu() {
         menu.setVisible(false);
     }
-    
+    /**
+     * Zobraz menu.
+     */
     public void displayMenu() {
         menu = new MenuP();
         this.add(menu);

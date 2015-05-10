@@ -12,7 +12,7 @@ import player.Player;
 import treasure.CardPack;
 
 /**
- *
+ * Menu.
  * @author marek
  */
 public class MenuP extends javax.swing.JPanel {
