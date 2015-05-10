@@ -440,5 +440,7 @@ public class Labyrinth {
         pack = gameState.cardPack;
         Player.players = gameState.players;
         Player.activePos = gameState.activePos;
+        
+        gui.reDrawBoard();
     }
 }

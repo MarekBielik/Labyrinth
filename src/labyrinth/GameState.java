@@ -13,6 +13,7 @@ import treasure.CardPack;
 /**
  *
  * @author marek
+ * Stores one state of the game.
  */
 public class GameState implements Serializable {
     

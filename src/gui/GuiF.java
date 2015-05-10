@@ -8,6 +8,16 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Stack;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import labyrinth.Labyrinth;
 
 /**
@@ -16,16 +26,15 @@ import labyrinth.Labyrinth;
  */
 public class GuiF extends javax.swing.JFrame {
 
-    public  MenuP menu;
-    public GameP board;
-    public LoadGameP LoadGame;
-    public SaveGameP SaveGame;
+    protected MenuP menu;
+    protected GameP board;
     
     /**
      * Creates new form MenuGui
      */
     public GuiF() {
         
+        setTitle("Labyrinth");
         this.setVisible(true);
         initComponents();
 
@@ -35,10 +44,18 @@ public class GuiF extends javax.swing.JFrame {
     }
     
     public void reDrawBoard() {
-        board.setVisible(false);
-        board.removeAll();
-        board = new GameP();
-        this.add(board);
+        if (board != null) {
+            board.setVisible(false);
+            board.revalidate();
+            board.removeAll();
+            board = new GameP();
+            this.add(board);
+        }
+        else {
+            hideMenu();
+            board = new GameP();
+            this.add(board);
+        }
     }
     
     public void displayBoard() {
@@ -53,24 +70,6 @@ public class GuiF extends javax.swing.JFrame {
     public void displayMenu() {
         menu = new MenuP();
         this.add(menu);
-    }
-    
-    
-    
-    public void DisplayLoadGame()
-    {
-        LoadGame = new LoadGameP();
-        menu.setVisible(false);
-        this.add(LoadGame);
-        pack();
-    }
-    
-    public void DisplaySaveGame()
-    {
-        SaveGame = new SaveGameP();
-        menu.setVisible(false);
-        this.add(SaveGame);
-        pack();
     }
     
     
@@ -153,9 +152,44 @@ public class GuiF extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void LoadGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadGameMIActionPerformed
-        // TODO add your handling code here:
-        System.out.println("Load Game");
-        DisplayLoadGame();
+        JFileChooser loadGameF = new JFileChooser();
+        loadGameF.setVisible(true);
+        
+        int result = loadGameF.showSaveDialog(loadGameF);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            System.err.println("load");
+            this.setEnabled(true);
+            loadGameF.setVisible(false);
+            File f = loadGameF.getSelectedFile();
+            String filename = f.getAbsolutePath();
+            ObjectInputStream objectinputstream = null;
+            FileInputStream streamIn = null;
+            try {
+                streamIn = new FileInputStream(filename);
+                objectinputstream = new ObjectInputStream(streamIn);
+                Labyrinth.moveStack = (Stack<byte[]>) objectinputstream.readObject();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally {
+                if(objectinputstream != null){
+                    try {
+                        objectinputstream .close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(GuiF.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                  } 
+                }
+            Labyrinth.restoreMove();
+            
+        }
+        else if (result == JFileChooser.CANCEL_OPTION) {
+            System.err.println("Cancel was selected");
+                this.setEnabled(true);
+                loadGameF.setVisible(false);
+        }
+        
+        
     }//GEN-LAST:event_LoadGameMIActionPerformed
 
     private void ExitGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitGameMIActionPerformed
@@ -165,15 +199,46 @@ public class GuiF extends javax.swing.JFrame {
 
     private void SaveGameMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveGameMIActionPerformed
         // TODO add your handling code here:
-        System.out.println("Save Game");
-        DisplaySaveGame();
+        JFileChooser saveGameF = new JFileChooser();
+        saveGameF.setVisible(true);
+ 
+        int result = saveGameF.showSaveDialog(saveGameF);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            System.err.println("save");
+            this.setEnabled(true);
+            saveGameF.setVisible(false);
+            File f = saveGameF.getSelectedFile();
+            String filename = f.getAbsolutePath();
+            FileOutputStream fout = null;
+            try {
+                fout = new FileOutputStream(filename);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(GuiF.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            ObjectOutputStream oos = null;
+            try {
+                oos = new ObjectOutputStream(fout);
+            } catch (IOException ex) {
+                Logger.getLogger(GuiF.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                oos.writeObject(Labyrinth.moveStack);
+            } catch (IOException ex) {
+                Logger.getLogger(GuiF.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        else if (result == JFileChooser.CANCEL_OPTION) {
+                System.err.println("Cancel was selected");
+                this.setEnabled(true);
+                saveGameF.setVisible(false);
+        }
     }//GEN-LAST:event_SaveGameMIActionPerformed
 
     private void UndoMIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UndoMIActionPerformed
         // TODO add your handling code here:
         System.out.println("Undo");
         Labyrinth.restoreMove();
-        reDrawBoard();
     }//GEN-LAST:event_UndoMIActionPerformed
 
 
