@@ -5,7 +5,7 @@ import treasure.TreasureCard;
 
 public class MazeField implements Serializable {
 
-    public int row, col;
+    public int row, col, pomR, pomC;
     public MazeCard mazeCard;
 
     public MazeField(int row, int col) {

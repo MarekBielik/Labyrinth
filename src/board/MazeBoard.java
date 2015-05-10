@@ -9,6 +9,8 @@ import labyrinth.Labyrinth;
 
 public class MazeBoard implements Serializable{
 
+
+    
     /**
      * game mode
      */
@@ -29,6 +31,7 @@ public class MazeBoard implements Serializable{
     public static MazeBoard createMazeBoard(int n) {
 
         return new MazeBoard(n);
+
     }
 
     public MazeBoard(int n) {
@@ -43,6 +46,8 @@ public class MazeBoard implements Serializable{
 
     public void newGame() {
         /* hraci kameny */
+
+        
         Random rand = new Random();
         int r;
         /* hraci kameny T */
@@ -197,14 +202,17 @@ public class MazeBoard implements Serializable{
         MazeCard tmpFreeCard;
         int lastIndex = board.length - 1;
         boolean boardShifted = false;
-        
+        //boolean canMove = true;
+        System.out.println(c + "=" + mf.pomC + "a" + r + "=" + mf.pomR);
         if(r > lastIndex || c > lastIndex)
             return boardShifted;
         
         
         /* ↓ */
-        if (r == 1 && c % 2 == 0) {
+        if (r == 1 && c % 2 == 0 && ((r != mf.pomR && c != mf.pomC) || (r == mf.pomR))) {
             System.out.println("↓");
+            mf.pomC = c;
+            mf.pomR = r;
             boardShifted = true;
 
             tmpFreeCard = board[lastIndex][c].getCard();
@@ -307,11 +315,15 @@ public class MazeBoard implements Serializable{
             }
             }
             
-            
         }
         /* → */
-        else if (r % 2 == 0 && c == 1) {
+
+        else 
+        if (r % 2 == 0 && c == 1 && ((r != mf.pomR && c != mf.pomC) || (c == mf.pomC)))
+        {
             boardShifted = true;
+            mf.pomC = c;
+            mf.pomR = r;
             System.out.println("→");
             tmpFreeCard = board[r][lastIndex].getCard();
 
@@ -416,8 +428,10 @@ public class MazeBoard implements Serializable{
         }
         /* ↑ */
         else    
-        if (r == lastIndex && c % 2 == 0) {
+        if (r == lastIndex && c % 2 == 0 && ((r != mf.pomR && c != mf.pomC) || (r == mf.pomR))) {
             boardShifted = true;
+            mf.pomC = c;
+            mf.pomR = r;
             System.out.println("↑");
             
             
@@ -521,8 +535,11 @@ public class MazeBoard implements Serializable{
             }
         }
         /* ← */
-        else if (r % 2 == 0 && c == lastIndex) {
+        else if (r % 2 == 0 && c == lastIndex && ((r != mf.pomR && c != mf.pomC) || (c == mf.pomC))) 
+        {
             boardShifted = true;
+            mf.pomR = r;
+            mf.pomC = c;
             System.out.println("←");
             tmpFreeCard = board[r][1].getCard();
 
