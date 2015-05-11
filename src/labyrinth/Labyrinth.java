@@ -14,6 +14,7 @@ import gui.WinnerF;
 import java.awt.Image;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -137,155 +138,155 @@ public class Labyrinth {
         
         //init player's images
         try {
-             p1Image = ImageIO.read(Labyrinth.class.getResource("/media/BLUE1.png"));
+             p1Image = ImageIO.read(new File("/lib/media/BLUE1.png"));
             } catch (IOException ex) {}
         
         try {
-             p2Image = ImageIO.read(Labyrinth.class.getResource("/media/GREEN1.png"));
+             p2Image = ImageIO.read(new File("/lib/media/GREEN1.png"));
             } catch (IOException ex) {}
         
         try {
-             p3Image = ImageIO.read(Labyrinth.class.getResource("/media/YELLOW1.png"));
+             p3Image = ImageIO.read(new File("/lib/media/YELLOW1.png"));
             } catch (IOException ex) {}
         
         try {
-             p4Image = ImageIO.read(Labyrinth.class.getResource("/media/RED1.png"));
+             p4Image = ImageIO.read(new File("/lib/media/RED1.png"));
             } catch (IOException ex) {}
         
         //init ways' images
         try {
-             iUD = ImageIO.read(Labyrinth.class.getResource("/media/iUD.png"));
+             iUD = ImageIO.read(new File("/lib/media/iUD.png"));
             } catch (IOException ex) {}
         
         try {
-             iLR = ImageIO.read(Labyrinth.class.getResource("/media/iLR.png"));
+             iLR = ImageIO.read(new File("/lib/media/iLR.png"));
             } catch (IOException ex) {}
         
         try {
-             rohLU = ImageIO.read(Labyrinth.class.getResource("/media/rohLU.png"));
+             rohLU = ImageIO.read(new File("/lib/media/rohLU.png"));
             } catch (IOException ex) {}
         
         try {
-             rohLD = ImageIO.read(Labyrinth.class.getResource("/media/rohLD.png"));
+             rohLD = ImageIO.read(new File("/lib/media/rohLD.png"));
             } catch (IOException ex) {}
         
         try {
-             rohRD = ImageIO.read(Labyrinth.class.getResource("/media/rohRD.png"));
+             rohRD = ImageIO.read(new File("/lib/media/rohRD.png"));
             } catch (IOException ex) {}
         
         try {
-             rohRU = ImageIO.read(Labyrinth.class.getResource("/media/rohRU.png"));
+             rohRU = ImageIO.read(new File("/lib/media/rohRU.png"));
             } catch (IOException ex) {}
         
         try {
-             tLRD = ImageIO.read(Labyrinth.class.getResource("/media/tLRD.png"));
+             tLRD = ImageIO.read(new File("/lib/media/tLRD.png"));
             } catch (IOException ex) {}
                 
         try {
-             tLRU = ImageIO.read(Labyrinth.class.getResource("/media/tLRU.png"));
+             tLRU = ImageIO.read(new File("/lib/media/tLRU.png"));
             } catch (IOException ex) {}
                 
         try {
-             tLUD = ImageIO.read(Labyrinth.class.getResource("/media/tLUD.png"));
+             tLUD = ImageIO.read(new File("/lib/media/tLUD.png"));
             } catch (IOException ex) {}
                 
         try {
-             tRUD = ImageIO.read(Labyrinth.class.getResource("/media/tRUD.png"));
+             tRUD = ImageIO.read(new File("/lib/media/tRUD.png"));
             } catch (IOException ex) {}   
         
         /* pictures */
         
         try {
-             s1Image = ImageIO.read(Labyrinth.class.getResource("/media/s1.png"));
+             s1Image = ImageIO.read(new File("/lib/media/s1.png"));
             } catch (IOException ex) {}    
 
         try {
-             s2Image = ImageIO.read(Labyrinth.class.getResource("/media/s2.png"));
+             s2Image = ImageIO.read(new File("/lib/media/s2.png"));
             } catch (IOException ex) {}  
         
         try {
-             s3Image = ImageIO.read(Labyrinth.class.getResource("/media/s3.png"));
+             s3Image = ImageIO.read(new File("/lib/media/s3.png"));
             } catch (IOException ex) {}  
         try {
-             s4Image = ImageIO.read(Labyrinth.class.getResource("/media/s4.png"));
+             s4Image = ImageIO.read(new File("/lib/media/s4.png"));
             } catch (IOException ex) {}  
         try {
-             s5Image = ImageIO.read(Labyrinth.class.getResource("/media/s5.png"));
+             s5Image = ImageIO.read(new File("/lib/media/s5.png"));
             } catch (IOException ex) {}  
         try {
-             s6Image = ImageIO.read(Labyrinth.class.getResource("/media/s6.png"));
+             s6Image = ImageIO.read(new File("/lib/media/s6.png"));
             } catch (IOException ex) {}  
     
         try {
-             s7Image = ImageIO.read(Labyrinth.class.getResource("/media/s7.png"));
+             s7Image = ImageIO.read(new File("/lib/media/s7.png"));
             } catch (IOException ex) {}  
         
         try {
-             s8Image = ImageIO.read(Labyrinth.class.getResource("/media/s8.png"));
+             s8Image = ImageIO.read(new File("/lib/media/s8.png"));
             } catch (IOException ex) {}  
         
         try {
-             s9Image = ImageIO.read(Labyrinth.class.getResource("/media/s9.png"));
+             s9Image = ImageIO.read(new File("/lib/media/s9.png"));
             } catch (IOException ex) {}  
         
         try {
-             s10Image = ImageIO.read(Labyrinth.class.getResource("/media/s10.png"));
+             s10Image = ImageIO.read(new File("/lib/media/s10.png"));
             } catch (IOException ex) {}  
         
         try {
-             s11Image = ImageIO.read(Labyrinth.class.getResource("/media/s11.png"));
+             s11Image = ImageIO.read(new File("/lib/media/s11.png"));
             } catch (IOException ex) {}  
         
         try {
-             s12Image = ImageIO.read(Labyrinth.class.getResource("/media/s12.png"));
+             s12Image = ImageIO.read(new File("/lib/media/s12.png"));
             } catch (IOException ex) {}  
         
         try {
-             s13Image = ImageIO.read(Labyrinth.class.getResource("/media/s13.png"));
+             s13Image = ImageIO.read(new File("/lib/media/s13.png"));
             } catch (IOException ex) {}  
         
         try {
-             s14Image = ImageIO.read(Labyrinth.class.getResource("/media/s14.png"));
+             s14Image = ImageIO.read(new File("/lib/media/s14.png"));
             } catch (IOException ex) {}  
         
         try {
-             s15Image = ImageIO.read(Labyrinth.class.getResource("/media/s15.png"));
+             s15Image = ImageIO.read(new File("/lib/media/s15.png"));
             } catch (IOException ex) {}  
         
         try {
-             s16Image = ImageIO.read(Labyrinth.class.getResource("/media/s16.png"));
+             s16Image = ImageIO.read(new File("/lib/media/s16.png"));
             } catch (IOException ex) {}  
         
         try {
-             s17Image = ImageIO.read(Labyrinth.class.getResource("/media/s17.png"));
+             s17Image = ImageIO.read(new File("/lib/media/s17.png"));
             } catch (IOException ex) {}  
         
         try {
-             s18Image = ImageIO.read(Labyrinth.class.getResource("/media/s18.png"));
+             s18Image = ImageIO.read(new File("/lib/media/s18.png"));
             } catch (IOException ex) {}  
         
         try {
-             s19Image = ImageIO.read(Labyrinth.class.getResource("/media/s19.png"));
+             s19Image = ImageIO.read(new File("/lib/media/s19.png"));
             } catch (IOException ex) {}  
         
         try {
-             s20Image = ImageIO.read(Labyrinth.class.getResource("/media/s20.png"));
+             s20Image = ImageIO.read(new File("/lib/media/s20.png"));
             } catch (IOException ex) {}  
 
         try {
-             s21Image = ImageIO.read(Labyrinth.class.getResource("/media/s21.png"));
+             s21Image = ImageIO.read(new File("/lib/media/s21.png"));
             } catch (IOException ex) {}  
         
         try {
-             s22Image = ImageIO.read(Labyrinth.class.getResource("/media/s22.png"));
+             s22Image = ImageIO.read(new File("/lib/media/s22.png"));
             } catch (IOException ex) {}  
         
         try {
-             s23Image = ImageIO.read(Labyrinth.class.getResource("/media/s23.png"));
+             s23Image = ImageIO.read(new File("/lib/media/s23.png"));
             } catch (IOException ex) {}  
         
         try {
-             s24Image = ImageIO.read(Labyrinth.class.getResource("/media/s24.png"));
+             s24Image = ImageIO.read(new File("/lib/media/s24.png"));
             } catch (IOException ex) {}  
  
                 

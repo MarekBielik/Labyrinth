@@ -75,16 +75,16 @@ public class FieldP extends javax.swing.JPanel {
         //find out whether any players are on the field or not
         for (int n = 0; n < Labyrinth.numbeOfPlayers; n++) {
             if (n == 0 && Player.isPlayerOnField(n, c, r))
-                player1L.setIcon(new ImageIcon(Labyrinth.p1Image));
+                player1L.setIcon(new ImageIcon("lib/media/BLUE1.png"));
             
             if (n == 1 && Player.isPlayerOnField(n, c, r))
-                player2L.setIcon(new ImageIcon(Labyrinth.p2Image));
+                player2L.setIcon(new ImageIcon("lib/media//GREEN1.png"));
             
             if (n == 2 && Player.isPlayerOnField(n ,c, r))
-                player3L.setIcon(new ImageIcon(Labyrinth.p3Image));
+                player3L.setIcon(new ImageIcon("lib/media//YELLOW1.png"));
             
             if (n == 3 && Player.isPlayerOnField(n, c, r))
-                player4L.setIcon(new ImageIcon(Labyrinth.p4Image));
+                player4L.setIcon(new ImageIcon("lib/media//RED1.png"));
         }
         
     }
@@ -102,36 +102,36 @@ public class FieldP extends javax.swing.JPanel {
            card = Labyrinth.mazeBoard.board[c][r].getCard();
        
        if (card.contains(UP, DOWN)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.iUD));
+           wayL.setIcon(new ImageIcon("lib/media/iUD.png"));
        }
        else if (card.contains(LEFT, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.iLR));
+           wayL.setIcon(new ImageIcon("lib/media/iLR.png"));
        }
        /* ROH - section */
        else if (card.contains(UP, LEFT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.rohLU));
+           wayL.setIcon(new ImageIcon("lib/media/rohLU.png"));
        }
        else if (card.contains(UP, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.rohRU));
+           wayL.setIcon(new ImageIcon("lib/media/rohRU.png"));
        }
        else if (card.contains(DOWN, LEFT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.rohLD));
+           wayL.setIcon(new ImageIcon("lib/media//rohLD.png"));
        }
        else if (card.contains(DOWN, RIGHT)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.rohRD));
+           wayL.setIcon(new ImageIcon("lib/media//rohRD.png"));
        }
        /* T - section  */
        else if (card.contains(LEFT, RIGHT, DOWN)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.tLRD));
+           wayL.setIcon(new ImageIcon("lib/media/tLRD.png"));
        }
        else if (card.contains(LEFT, RIGHT, UP)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.tLRU));
+           wayL.setIcon(new ImageIcon("lib/media/tLRU.png"));
        }
        else if (card.contains(LEFT, UP, DOWN)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.tLUD));
+           wayL.setIcon(new ImageIcon("lib/media/tLUD.png"));
        }
        else if (card.contains(RIGHT, UP, DOWN)) {
-           wayL.setIcon(new ImageIcon(Labyrinth.tRUD));
+           wayL.setIcon(new ImageIcon("lib/media/tRUD.png"));
        }
     }
     /**
@@ -143,99 +143,99 @@ public class FieldP extends javax.swing.JPanel {
         
 
         if (treasureCard.treasure.code == 0) {
-            return (new ImageIcon(Labyrinth.s1Image));
+            return (new ImageIcon("lib/media/s1.png"));
         }
         
         else if (treasureCard.treasure.code == 1) {
-            return (new ImageIcon(Labyrinth.s2Image));
+            return (new ImageIcon("lib/media//s2.png"));
         }
         
         else if (treasureCard.treasure.code == 2) {
-            return (new ImageIcon(Labyrinth.s3Image));
+            return (new ImageIcon("lib/media//s3.png"));
         }
         
         else if (treasureCard.treasure.code == 3) {
-            return (new ImageIcon(Labyrinth.s4Image));
+            return (new ImageIcon("lib/media//s4.png"));
         }
         
         else if (treasureCard.treasure.code == 4) {
-            return (new ImageIcon(Labyrinth.s5Image));
+            return (new ImageIcon("lib/media//s5.png"));
         }
         
         else if (treasureCard.treasure.code == 5) {
-            return (new ImageIcon(Labyrinth.s6Image));
+            return (new ImageIcon("lib/media//s6.png"));
         }   
         
         else if (treasureCard.treasure.code == 6) {
-            return (new ImageIcon(Labyrinth.s7Image));
+            return (new ImageIcon("lib/media//s7.png"));
         }
         
         else if (treasureCard.treasure.code == 7) {
-            return (new ImageIcon(Labyrinth.s8Image));
+            return (new ImageIcon("lib/media//s8.png"));
         }
         
         else if (treasureCard.treasure.code == 8) {
-            return (new ImageIcon(Labyrinth.s9Image));
+            return (new ImageIcon("lib/media//s9.png"));
         }
         
         else if (treasureCard.treasure.code == 9) {
-            return (new ImageIcon(Labyrinth.s10Image));
+            return (new ImageIcon("lib/media//s10.png"));
         }
         
         else if (treasureCard.treasure.code == 10) {
-            return (new ImageIcon(Labyrinth.s11Image));
+            return (new ImageIcon("lib/media//s11.png"));
         }
         
         else if (treasureCard.treasure.code == 11) {
-            return (new ImageIcon(Labyrinth.s12Image));
+            return (new ImageIcon("lib/media//s12.png"));
         }  
         
         else if (treasureCard.treasure.code == 12) {
-            return (new ImageIcon(Labyrinth.s13Image));
+            return (new ImageIcon("lib/media//s13.png"));
         }
         
         else if (treasureCard.treasure.code == 13) {
-            return (new ImageIcon(Labyrinth.s14Image));
+            return (new ImageIcon("lib/media//s14.png"));
         }
         
         else if (treasureCard.treasure.code == 14) {
-            return (new ImageIcon(Labyrinth.s15Image));
+            return (new ImageIcon("lib/media//s15.png"));
         }
         
         else if (treasureCard.treasure.code == 15) {
-            return (new ImageIcon(Labyrinth.s16Image));
+            return (new ImageIcon("lib/media//s16.png"));
         }
         
         else if (treasureCard.treasure.code == 16) {
-            return (new ImageIcon(Labyrinth.s17Image));
+            return (new ImageIcon("lib/media//s17.png"));
         }
         
         else if (treasureCard.treasure.code == 17) {
-            return (new ImageIcon(Labyrinth.s18Image));
+            return (new ImageIcon("lib/media//s18.png"));
         }  
         
         else if (treasureCard.treasure.code == 18) {
-            return (new ImageIcon(Labyrinth.s19Image));
+            return (new ImageIcon("lib/media//s19.png"));
         }
         
         else if (treasureCard.treasure.code == 19) {
-            return (new ImageIcon(Labyrinth.s20Image));
+            return (new ImageIcon("lib/media//s20.png"));
         }
         
         else if (treasureCard.treasure.code == 20) {
-            return (new ImageIcon(Labyrinth.s21Image));
+            return (new ImageIcon("lib/media//s21.png"));
         }
         
         else if (treasureCard.treasure.code == 21) {
-            return (new ImageIcon(Labyrinth.s22Image));
+            return (new ImageIcon("lib/media//s22.png"));
         }
         
         else if (treasureCard.treasure.code == 22) {
-            return (new ImageIcon(Labyrinth.s23Image));
+            return (new ImageIcon("lib/media//s23.png"));
         }
         
         else {
-            return (new ImageIcon(Labyrinth.s24Image));
+            return (new ImageIcon("lib/media//s24.png"));
         }          
         
     }
