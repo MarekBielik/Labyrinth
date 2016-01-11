@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Labyrinth" default="compile" basedir=".">
+    <property name="srcdir" location = "./src" />
+    <property name="buildir" location = "./build" />
+    <property name="libdir" value = "./lib" />
+    <property name="docdir" value = "./doc" />
+    <property name="destclientdir" location = "./dest-client" />
+    <property name="jarname" value = "ija2015-client.jar" />
+    <property name="mainclass" value = "labyrinth.Labyrinth" />
+
+	<path id="classpath">
+		<fileset dir="${libdir}" includes="**/*.jar"/>
+	</path>
+	<target name="clean">
+		<delete dir="${buildir}"/>
+	</target>
+    
+    	<!-- preklad -->
+	<target name="compile" depends="clean">
+		<mkdir dir="${buildir}"/>
+		<javac includeantruntime="false" srcdir="${srcdir}" destdir="${buildir}" classpath="${libdir}/AbsoluteLayout.jar:${srcdir}"/>
+  
+		<jar destfile="${destclientdir}/${jarname}">
+			<fileset dir="${buildir}"/>
+			<manifest>
+				<attribute name="Main-Class" value="${mainclass}"/>
+				<attribute name="Class-Path" value="lib/AbsoluteLayout.jar"/>
+			</manifest>
+		  <fileset dir="lib">
+      <include name ="media/*" />
+      <include name ="AbsoluteLayout.jar" />
+      </fileset>
+    </jar>
+
+		<mkdir dir="${destclientdir}/lib"/>
+		<copy file="${libdir}/AbsoluteLayout.jar" todir="${destclientdir}/lib"/>
+		<copydir src="${libdir}/media" dest="${destclientdir}/lib/media"/>
+    <!-- copy file="${libdir}/AbsoluteLayout.jar.org.netbeans.lib.awtextra.*" todir="./src/gui"/ -->
+
+	<!-- dokumentace -->	
+		<javadoc sourcepath="${srcdir}" destdir="${docdir}">
+			<classpath>
+				<fileset dir="${libdir}">
+					<include name="AbsoluteLayout.jar"/>
+				</fileset>
+			</classpath>
+		</javadoc>	
+	</target>
+
+	<!-- spousteni -->
+	<target name="run">
+		<java jar="${destclientdir}/${jarname}" fork="true" dir="${destclientdir}"/>
+    <classpath>
+      <pathelement path="${libdir}"/>
+    </classpath>
+	</target>
+
+</project>
+
+
